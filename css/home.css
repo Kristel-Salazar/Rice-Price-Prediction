@@ -2,7 +2,7 @@
 body {
     margin: 0;
     padding: 0px;
-    font-family: Verdana;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight:lighter;
     display: flex;
     height: 100vh;
@@ -96,15 +96,6 @@ body {
     right: 25px;
     position: relative;
 }
-.search-container {
-    width: 100%;
-    height: 14%;
-    border-bottom: 2px solid #A8ABB4;
-    display: flex;
-    justify-content: center; 
-    align-items: center; 
-    position: relative;
-}
 
 .search-bar {
     width: 55%;
@@ -149,18 +140,19 @@ body {
 /* right menu */
 
 .right-menu {
-    width: 30%;
+    width:26%;
     display: flex;
     flex-direction: column;
     border-left: 2px solid #ccc;
     height: 100%; 
     overflow-y: scroll;
+    padding: 0 0 10px 10px
 }
 
 /* right menu containers */
 .right-menu .update-container {
     max-width: fit-content;
-    height: 90px;
+    max-height: fit-content;
     padding: 10%;
     border-radius: 20px;
     background-color: #FAEF98;
@@ -180,14 +172,12 @@ body {
     grid:
       "header-description-text header-description-text header-description-text" 0.4fr
       "price-display price-display price-display" 1fr
-      "scale-growth-percentage scale-growth-percentage scale-growth-percentage" 0.3fr
-      / 1fr 1fr 1fr;
+      / 1fr 1fr;
     gap: 8px;
   }
   
   .header-description-text { grid-area: header-description-text; }
   .price-display { grid-area: price-display;}
-  .scale-growth-percentage { grid-area: scale-growth-percentage; }
 
 .update-container-layout .header-description-text{
     font-size: 1vw;
@@ -225,11 +215,13 @@ body {
 
 
 .content-wrapper .container {
+    color: #fff;
     max-width: fit-content;
-    height: 60%;
+    max-height: fit-content;
     padding: 6%;
     border-radius: 20px;
-    background-color: #BACD92;
+    background: rgb(93,103,73);
+    background: linear-gradient(0deg, rgba(93,103,73,1) 0%, rgba(122,135,96,1) 35%, rgba(156,172,122,1) 100%);
     margin-inline: auto;
     display: inline-block;
 
@@ -248,14 +240,12 @@ body {
     grid:
       "header-description-text header-description-text header-description-text" 0.4fr
       "price-display price-display price-display" 1fr
-      "scale-growth-percentage scale-growth-percentage scale-growth-percentage" 0.3fr
-      / 1fr 1fr 1fr;
+      / 1fr 1fr;
     gap: 0px;
   }
   
   .header-description-text { grid-area: header-description-text; }
   .price-display { grid-area: price-display;}
-  .scale-growth-percentage { grid-area: scale-growth-percentage; margin-bottom: 5%;}
 
 .header-description-text{
     font-size: 1vw;
@@ -265,6 +255,7 @@ body {
 
 .price-display, .peso-sign{
     text-align: center;
+    margin-bottom: 10px;
 }
 
 .peso-sign{
@@ -280,13 +271,7 @@ body {
     font-weight:bold;
 }
 
-.arrow{
-    font-size: 2vw;
-    color: #821131;
-    font-weight: bold;
-}
-
-.scale-growth-percentage{
+.rice-type{
     font-weight: 500;
     font-size: 1vw;
 }
@@ -310,40 +295,30 @@ body {
     padding-top: 5%;
 }
 
-/* grid layout */
+/* GRID LAYOUT  */
 .layout {
     width: 100%;
-    height: 100%;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
     display: grid;
     grid:
-      "container1 container2 container3" 0.7fr
-      "text-display text-display text-display" 0.1fr
-      "graph graph graph" 1fr
-      / 1fr 1fr 1fr;
+      "header-container header-container header-container header-container" 0.1fr
+      "container1 container2 container3 container4" 1fr
+      "header2-container header2-container header2-container header2-container" 0.1fr
+      "graph graph graph graph" 1fr
+      / 1fr 1fr 1fr 1fr;
     gap: 8px;
   }
   
-  .container1 { grid-area: container1;   display: flex;
-    justify-content: center;
-    align-items: center;}
-  .container2 { grid-area: container2;   display: flex;
-    justify-content: center;
-    align-items: center;}
-  .container3 { grid-area: container3;   display: flex;
-    justify-content: center;
-    align-items: center;}
-  .text-display { grid-area: text-display; }
+  .header-container { grid-area: header-container; }
+  .container1 { grid-area: container1; }
+  .container2 { grid-area: container2; }
+  .container3 { grid-area: container3; }
+  .container4 { grid-area: container4; }
+  .header2-container { grid-area: header2-container; }
   .graph { grid-area: graph; }
+/* GRID LAYOUT  ENDS*/
 
-  .layout .container1, .container2, .container3{
-    padding: 40px 10px 10px 10px;
-  }
-
-
-  .graph-container{
-    padding: 2%;
-    font-weight: bold;
-  }
 
   /* dropdown year menu */
   select{
@@ -357,18 +332,15 @@ body {
 
   }
 /* graph container and its content */
-.graph-container-layout{
+.dropdown-layout {
     width: 100%;
-
-    display: grid;
-    grid:
-        "year-container" 0.1fr
-        "graph-container" 1fr
-        / 1fr;
-    gap: 8px;
-}
-.year-container{ grid-area: year-container; text-align: right;}
-.graph-container { grid-area: graph-container;}
+  
+    display: flex;
+    gap: 16px;
+    background-color: #fff;
+  }
+  
+  .grow1 { flex-grow: 1; }
 
 
 

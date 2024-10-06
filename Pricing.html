@@ -39,10 +39,6 @@
     </nav>
 
     <div class="main-content">
-      <div class="search-container">
-        <input type="text" placeholder="Search..." class="search-bar" style="text-align: left; font-weight: 400;"/>
-        <i class="fa-solid fa-magnifying-glass"></i>
-      </div>
 
         <div class="content-wrapper">
           <div id="pop-up"  style="display:none;" class="pop-up-container" >
@@ -83,7 +79,8 @@
           </div>
             <section class="layout">
                 <div class="retail-price-container">
-                  <div class="headline-container" style="text-align: center; margin-bottom: 2%; font-size: 1.5vw; font-weight: bold;">Overview of our Rice Retail Prices</div>
+              <h1 style="margin-left: 50px; margin-top: 0px; font-size: 40px; color:#E3AD03;">PRICING</h1>
+                  <div class="headline-container" style="text-align: center; margin-bottom: 2%; font-size: 35px; font-weight: bold; color: #E3AD03;">Retail Rice Price</div>
                     <div class="container">
                         <div class="dropdown-container">Start Year:
                             <select name="year-options" id="" class="start-year">
@@ -106,11 +103,9 @@
                     </div>
                 </div>
                 <div class="retail-price-prediction">
-                  <h2>Retail Rice Prediction</h2>
+                  <h2 style="font-size: 35; color: #E3AD03">Retail Rice Prediction</h2>
                   <div class="retail-rice-prediction-container">
                     <section class="retail-rice-prediction-layout">
-                      <div class="year-text"><p style="font-size: 1vw;">Year: </p></div>
-                      <div class="year-item"><input type="text"></div>
                       <div class="month-text"><p style="font-size: 1vw;">Month: </p></div>
                       <div class="month-item">
                         <select name="year-options" id="" class="start-year">
@@ -136,17 +131,13 @@
                           <option value="2021">Special</option>
                         </select>
                       </div>
-                      <div class="inflation-text"><p style="font-size: 1vw;">Inflation Rate: </p></div>
-                      <div class="inflation-item"><input type="text"></div>
-                      <div class="season-text"><p style="font-size: 1vw;">Season: </p></div>
+                      <div class="season-text"><p style="font-size: 1vw;">Year: </p></div>
                       <div class="season-item">
                         <select name="year-options" id="" class="start-year">
-                          <option value="2024">Dry</option>
-                          <option value="2023">Rainy</option>
+                          <option value="2024">2024</option>
+                          <option value="2023">2023</option>
                         </select>
                       </div>
-                      <div class="riceprice-text"><p style="font-size: 1vw;">Rice Price: </p> </div>
-                      <div class="riceprice-item"><input type="text"></div>
                       <div class="prediction-button">
                         <input type="button" name="answer" value="Predict" class="predict-button" onclick="showDiv()" />
                       </div>
@@ -178,27 +169,27 @@ new Chart(ctx, {
     datasets: [{
       label: 'Special',
       data: [12, 19, 3, 5, 2, 3, 45, 12, 23, 34, 22, 12],
-      borderWidth: 1,
+      borderWidth: 2,
       pointBackgroundColor: 'rgba(255,255,255, 0.9)',
       radius: 5
     }, {
       label: 'Well Milled',
       data: [2, 5, 32, 1, 3, 5, 56, 43, 33, 21, 12, 22],
-      borderWidth: 1,
+      borderWidth: 2,
       pointBackgroundColor: 'rgba(255,255,255, 0.9)',
       radius: 5
 
     }, {
       label: 'Premium',
       data: [3, 6, 11, 35, 65, 24, 65, 43, 33, 66, 67,89],
-      borderWidth: 1,
+      borderWidth: 2,
       pointBackgroundColor: 'rgba(255,255,255, 0.9)',
       radius: 5
 
     }, {
       label: 'Regular',
       data: [5, 23, 45, 11, 23, 4, 67, 77, 78, 88, 89, 90],
-      borderWidth: 1,
+      borderWidth: 2,
       pointBackgroundColor: 'rgba(255,255,255, 0.9)',
       radius: 5
 

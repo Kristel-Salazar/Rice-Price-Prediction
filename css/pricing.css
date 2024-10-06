@@ -99,11 +99,7 @@ body {
 .search-container {
     width: 100%;
     height: 14%;
-    border-bottom: 2px solid #A8ABB4;
-    display: flex;
-    justify-content: center; 
-    align-items: center; 
-    position: relative;
+
 }
 
 .search-bar {
@@ -150,6 +146,9 @@ body {
 .layout {
     width: 100%;
     display: grid;
+    
+    overflow-y: scroll;
+    scroll-behavior: smooth;
     grid:
       "retail-price-container retail-price-container" 0.5fr
       "retail-price-prediction retail-price-prediction" 1fr
@@ -218,29 +217,20 @@ h2{
 
     display: grid;
     grid:
-      "year-text year-item" 1fr
       "month-text month-item" 1fr
       "ricetype-text ricetype-item" 1fr
-      "inflation-text inflation-item" 1fr
       "season-text season-item" 1fr
-      "riceprice-text riceprice-item" 1fr
       "prediction-button prediction-button" 1fr
       / 1fr 1fr;
     gap: 10px;
   }
   
-  .year-text { grid-area: year-text; text-align: right;}
-  .year-item { grid-area: year-item; padding-right: 10%; width: 84%;}
   .month-text { grid-area: month-text; text-align: right;}
   .month-item { grid-area: month-item;  padding-right: 10%;width: 100%;}
   .ricetype-text { grid-area: ricetype-text; text-align: right;}
   .ricetype-item { grid-area: ricetype-item;  padding-right: 10%; width: 100%;}
-  .inflation-text { grid-area: inflation-text; text-align: right;}
-  .inflation-item { grid-area: inflation-item;  padding-right: 10%; width: 84%;}
   .season-text { grid-area: season-text; text-align: right;}
   .season-item { grid-area: season-item;  padding-right: 10%; width: 100%;}
-  .riceprice-text { grid-area: riceprice-text; text-align: right;}
-  .riceprice-item { grid-area: riceprice-item;  padding-right: 10%; width: 84%;}
   .prediction-button { grid-area: prediction-button; text-align: center;}
 
 .rice-retail-prediction-layout{
@@ -283,7 +273,7 @@ h2{
 {
     position: absolute;
     width: 100%;
-    height: 200%;
+    height: 100%;
     background-color: rgba(217, 217, 217, 0.8);
 }
 
@@ -294,7 +284,7 @@ h2{
     background-color: #BACD92;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 30%;
+    margin-top: 5%;
     font-family: Verdana;
     text-align: center;
     border: 1px #BACD92;

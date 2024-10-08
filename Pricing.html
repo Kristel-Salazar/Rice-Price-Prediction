@@ -3,163 +3,198 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>Pricing</title>
     <link rel="stylesheet" href="./css/pricing.css" />
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script src="/node_modules/chart.js/dist/chart.umd.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://fontawesome.com/icons/magnifying-glass?f=classic&s=light"
-    />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="/node_modules/chart.js/dist/chart.umd.js"></script>
+    <title>Pricing</title>
   </head>
-
   <body>
-    <nav class="menu">
-      <div class="logo-container">
-        <img src="./img/logo.png" class="img_logo" />
-        <div class="text-content">
-          <div style="font-size: 2em; font-weight: 700">
-            <span style="color: #bacd92">RR</span
-            ><span style="color: #eabd3d">PP</span>
-          </div>
-          <div class="subtitle">Navigating Prices, Securing Futures</div>
-        </div>
-      </div>
+    <section class="layout">
+      <div class="header">
+        <!-- New parent flex container -->
+        <div
+          class="header-container"
+          style="display: flex; align-items: center"
+        >
+          <!-- Toggle Button for Mobile View -->
+          <button class="menu-toggle" onclick="toggleMenu()">☰</button>
 
-      <a href="./index.html" class="nav-link home">
-        <span class="icon"><img src="./img/home.png" /></span> Home
-      </a>
-      <a href="./Pricing.html" class="nav-link pricing active">
-        <span class="icon"><img src="./img/peso_symbol.png" /></span> Pricing
-      </a>
-      <a href="./About.html" class="nav-link about">
-        <span class="icon"><img src="./img/about.png" /></span> About
-      </a>
-    </nav>
-
-    <div class="main-content">
-
-        <div class="content-wrapper">
-          <div id="pop-up"  style="display:none;" class="pop-up-container" >
-            <div class="pop-up-window">
-              <section class="pop-up-window-layout">
-                <div class="close-button-container">
-                  <button class="close-button" onclick='hideDiv()'>&#x2715;</button>
-                </div>
-                <div class="pop-up-Header">
-                  <h1>Predicted Retail Price</h1>
-                </div>
-                <div class="pop-up-Month">
-                  <p>Month:</p>
-                </div>
-                <div class="pop-up-Month-item">
-                  <div class="container">December</div>
-                </div>
-                <div class="pop-up-Year">
-                  <p>Year: </p>
-                </div>
-                <div class="pop-up-Year-item">
-                  <div class="container">2024</div>
-                </div>
-                <div class="pop-up-RiceType">
-                  <p>Rice Type: </p>
-                </div>
-                <div class="pop-up-RiceType-item">
-                  <div class="container">Premium</div>
-                </div>
-                <div class="pop-up-RetailPrice">
-                  <p>Retail Price (per/kg): </p><br>
-                </div>
-                <div class="pop-up-RetailPrice--item">
-                  <div class="container">50.00</div>
-                </div>
-              </section>
+          <!-- Logo and Text Content Container -->
+          <div class="logo-container-header">
+            <img src="./img/logo.png" class="img_logo" />
+            <div class="text-content">
+              <div style="font-size: 2em; font-weight: 700">
+                <span style="color: #bacd92">RR</span
+                ><span style="color: #eabd3d">PP</span>
+              </div>
+              <div class="subtitle">Navigating Prices, Securing Futures</div>
             </div>
           </div>
-            <section class="layout">
-                <div class="retail-price-container">
-              <h1 style="margin-left: 50px; margin-top: 0px; font-size: 40px; color:#E3AD03;">PRICING</h1>
-                  <div class="headline-container" style="text-align: center; margin-bottom: 2%; font-size: 35px; font-weight: bold; color: #E3AD03;">Retail Rice Price</div>
-                    <div class="container">
-                        <div class="dropdown-container">Start Year:
+        </div>
+        <div id="mySidenav" class="sidenav">
+          <a href="./index.html" class="nav-link home">
+            <span class="icon"><img src="img/home.png" /></span> Home
+          </a>
+          <a href="./Pricing.html" class="nav-link pricing active">
+            <span class="icon"><img src="img/peso_symbol.png" /></span> Pricing
+          </a>
+          <a href="./About.html" class="nav-link about">
+            <span class="icon"><img src="img/about.png" /></span> About
+          </a>
+        </div>
+      </div>
+      <div class="leftSide">
+        <nav class="menu">
+            <div class="logo-container">
+              <img src="./img/logo.png" class="img_logo" />
+              <div class="text-content">
+                <div class="text-logo">
+                  <span style="color: #bacd92">RR</span
+                  ><span style="color: #eabd3d">PP</span>
+                </div>
+                <div class="subtitle">Navigating Prices, Securing Futures</div>
+              </div>
+            </div>
+  
+            <a href="./index.html" class="nav-link home">
+              <span class="icon"><img src="img/home.png" /></span> Home
+            </a>
+            <a href="./Pricing.html" class="nav-link pricing active">
+              <span class="icon"><img src="img/peso_symbol.png" /></span> Pricing
+            </a>
+            <a href="./About.html" class="nav-link about">
+              <span class="icon"><img src="img/about.png" /></span> About
+            </a>
+          </nav>
+        </div>
+      </div>
+      <div class="body">
+        <div class="main-content">
+
+            <div class="content-wrapper">
+              <div id="pop-up"  style="display:none;" class="pop-up-container" >
+                <div class="pop-up-window">
+                  <section class="pop-up-window-layout">
+                    <div class="close-button-container">
+                      <button class="close-button" onclick='hideDiv()'>&#x2715;</button>
+                    </div>
+                    <div class="pop-up-Header">
+                      <h1>Predicted Retail Price</h1>
+                    </div>
+                    <div class="pop-up-Month">
+                      <p>Month:</p>
+                    </div>
+                    <div class="pop-up-Month-item">
+                      <div class="container">December</div>
+                    </div>
+                    <div class="pop-up-Year">
+                      <p>Year: </p>
+                    </div>
+                    <div class="pop-up-Year-item">
+                      <div class="container">2024</div>
+                    </div>
+                    <div class="pop-up-RiceType">
+                      <p>Rice Type: </p>
+                    </div>
+                    <div class="pop-up-RiceType-item">
+                      <div class="container">Premium</div>
+                    </div>
+                    <div class="pop-up-RetailPrice">
+                      <p>Retail Price (per/kg): </p><br>
+                    </div>
+                    <div class="pop-up-RetailPrice--item">
+                      <div class="container">50.00</div>
+                    </div>
+                  </section>
+                </div>
+              </div>
+                <section class="body-layout">
+                    <div class="retail-price-container">
+                  <h1>PRICING</h1>
+                      <div class="headline-container">Retail Rice Price</div>
+                        <div class="container">
+                            <div class="dropdown-container">
+                                Year: 
+                                <select name="year-options" id="" class="end-year">
+                                    <option value="2024">2024</option>
+                                    <option value="2023">2023</option>
+                                    <option value="2022">2022</option>
+                                    <option value="2021">2021</option>
+                                  </select>
+                              </div>
+                            <div>
+                                <canvas id="retail-price-chart" class="chart"></canvas>
+                              </div>
+                        </div>
+                    </div>
+                    <div class="retail-price-prediction">
+                      <h2>Retail Rice Prediction</h2>
+                      <div class="retail-rice-prediction-container">
+                        <section class="retail-rice-prediction-layout">
+                          <div class="month-text"><p>Month: </p></div>
+                          <div class="month-item">
+                            <select name="year-options" id="" class="start-year">
+                              <option value="2024">January</option>
+                              <option value="2023">February</option>
+                              <option value="2022">March</option>
+                              <option value="2021">April</option>
+                              <option value="2021">May</option>
+                              <option value="2021">June</option>
+                              <option value="2021">July</option>
+                              <option value="2021">August</option>
+                              <option value="2021">September</option>
+                              <option value="2021">November</option>
+                              <option value="2021">December</option>
+                            </select>
+                          </div>
+                          <div class="ricetype-text"><p>Rice Type: </p></div>
+                          <div class="ricetype-item">
+                            <select name="year-options" id="" class="start-year">
+                              <option value="2024">Regular</option>
+                              <option value="2023">Well Milled</option>
+                              <option value="2022">Premium</option>
+                              <option value="2021">Special</option>
+                            </select>
+                          </div>
+                          <div class="season-text"><p>Year: </p></div>
+                          <div class="season-item">
                             <select name="year-options" id="" class="start-year">
                               <option value="2024">2024</option>
                               <option value="2023">2023</option>
-                              <option value="2022">2022</option>
-                              <option value="2021">2021</option>
                             </select>
-                            End Year: 
-                            <select name="year-options" id="" class="end-year">
-                                <option value="2024">2024</option>
-                                <option value="2023">2023</option>
-                                <option value="2022">2022</option>
-                                <option value="2021">2021</option>
-                              </select>
                           </div>
-                        <div>
-                            <canvas id="retail-price-chart" class="chart"></canvas>
+                          <div class="prediction-button">
+                            <input type="button" name="answer" value="Predict" class="predict-button" onclick="showDiv()" />
                           </div>
+                        </section>
+                      </div>
                     </div>
-                </div>
-                <div class="retail-price-prediction">
-                  <h2 style="font-size: 35; color: #E3AD03">Retail Rice Prediction</h2>
-                  <div class="retail-rice-prediction-container">
-                    <section class="retail-rice-prediction-layout">
-                      <div class="month-text"><p style="font-size: 1vw;">Month: </p></div>
-                      <div class="month-item">
-                        <select name="year-options" id="" class="start-year">
-                          <option value="2024">January</option>
-                          <option value="2023">February</option>
-                          <option value="2022">March</option>
-                          <option value="2021">April</option>
-                          <option value="2021">May</option>
-                          <option value="2021">June</option>
-                          <option value="2021">July</option>
-                          <option value="2021">August</option>
-                          <option value="2021">September</option>
-                          <option value="2021">November</option>
-                          <option value="2021">December</option>
-                        </select>
-                      </div>
-                      <div class="ricetype-text"><p style="font-size: 1vw;">Rice Type: </p></div>
-                      <div class="ricetype-item">
-                        <select name="year-options" id="" class="start-year">
-                          <option value="2024">Regular</option>
-                          <option value="2023">Well Milled</option>
-                          <option value="2022">Premium</option>
-                          <option value="2021">Special</option>
-                        </select>
-                      </div>
-                      <div class="season-text"><p style="font-size: 1vw;">Year: </p></div>
-                      <div class="season-item">
-                        <select name="year-options" id="" class="start-year">
-                          <option value="2024">2024</option>
-                          <option value="2023">2023</option>
-                        </select>
-                      </div>
-                      <div class="prediction-button">
-                        <input type="button" name="answer" value="Predict" class="predict-button" onclick="showDiv()" />
-                      </div>
-                    </section>
-                  </div>
-                </div>
-              </section>
+                  </section>
+            </div>
         </div>
-    </div>
-  </body>
+      </div>
+      <div class="footer">
+        <div class="footer-container"></div>
+      </div>
+    </section>
+    <script>
+          // JavaScript function to toggle menu display
+      function toggleMenu() {
+        const menuContent = document.getElementById("mySidenav");
+        menuContent.style.width =
+          menuContent.style.width === "250px" ? "0px" : "250px";
+      }
 
-  <script>
-    document.querySelectorAll(".nav-link").forEach((link) => {
-      link.addEventListener("click", function () {
-        document
-          .querySelectorAll(".nav-link")
-          .forEach((link) => link.classList.remove("active"));
-        this.classList.add("active");
+      document.querySelectorAll(".nav-link").forEach((link) => {
+        link.addEventListener("click", function () {
+          document
+            .querySelectorAll(".nav-link")
+            .forEach((link) => link.classList.remove("active"));
+          this.classList.add("active");
+        });
       });
-    });
 
-// chart script
+      // chart script
 const ctx = document.getElementById('retail-price-chart');
 
 new Chart(ctx, {
@@ -217,5 +252,6 @@ function showDiv() {
 function hideDiv() {
    document.getElementById('pop-up').style.display = "None";
 }
-  </script>
+    </script>
+  </body>
 </html>

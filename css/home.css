@@ -384,6 +384,14 @@ select {
 
 /* Responsive Design for Mobile View */
 @media (max-width: 768px) {
+  .header-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+  }
+  .logo-container-header {
+    margin: 0 auto; /* Horizontally center the logo container */
+  }
   .header-container button {
     margin-right: 10px;
     padding: 10px;

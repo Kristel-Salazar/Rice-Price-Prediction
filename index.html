@@ -3,222 +3,338 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Home</title>
     <link rel="stylesheet" href="./css/home.css" />
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script src="/node_modules/chart.js/dist/chart.umd.js"></script>
-
-    <link
-      rel="stylesheet"
-      href="https://fontawesome.com/icons/magnifying-glass?f=classic&s=light"
-    />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="/node_modules/chart.js/dist/chart.umd.js"></script>
   </head>
-
   <body>
-    <nav class="menu">
-      <div class="logo-container">
-        <img src="./img/logo.png" class="img_logo" />
-        <div class="text-content">
-          <div style="font-size: 2em; font-weight: 700">
-            <span style="color: #bacd92">RR</span
-            ><span style="color: #eabd3d">PP</span>
+    <section class="layout">
+      <div class="header">
+        <!-- New parent flex container -->
+        <div
+          class="header-container"
+          style="display: flex; align-items: center"
+        >
+          <!-- Toggle Button for Mobile View -->
+          <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+          <!-- Logo and Text Content Container -->
+          <div class="logo-container-header">
+            <img src="./img/logo.png" class="img_logo" />
+            <div class="text-content">
+              <div style="font-size: 2em; font-weight: 700">
+                <span style="color: #bacd92">RR</span
+                ><span style="color: #eabd3d">PP</span>
+              </div>
+              <div class="subtitle">Navigating Prices, Securing Futures</div>
+            </div>
           </div>
-          <div class="subtitle">Navigating Prices, Securing Futures</div>
+        </div>
+        <div id="mySidenav" class="sidenav">
+          <a href="./index.html" class="nav-link home active">
+            <span class="icon"><img src="img/home.png" /></span> Home
+          </a>
+          <a href="./Pricing.html" class="nav-link pricing">
+            <span class="icon"><img src="img/peso_symbol.png" /></span> Pricing
+          </a>
+          <a href="./About.html" class="nav-link about">
+            <span class="icon"><img src="img/about.png" /></span> About
+          </a>
         </div>
       </div>
+      <div class="leftSide">
+        <nav class="menu">
+          <div class="logo-container">
+            <img src="./img/logo.png" class="img_logo" />
+            <div class="text-content">
+              <div class="text-logo">
+                <span style="color: #bacd92">RR</span
+                ><span style="color: #eabd3d">PP</span>
+              </div>
+              <div class="subtitle">Navigating Prices, Securing Futures</div>
+            </div>
+          </div>
 
-      <a href="./index.html" class="nav-link home active">
-        <span class="icon"><img src="img/home.png" /></span> Home
-      </a>
-      <a href="./Pricing.html" class="nav-link pricing">
-        <span class="icon"><img src="img/peso_symbol.png" /></span> Pricing
-      </a>
-      <a href="./About.html" class="nav-link about">
-        <span class="icon"><img src="img/about.png" /></span> About
-      </a>
-    </nav>
-
-    <div class="main-content">
-
-        <div class="content-wrapper">
-
-          <!-- GRID LAYOUT BODY AND ITS CONTENTS  -->
-          <section class="layout" style="margin: 10px">
-            <div class="header-container">
-              <h1 style="margin-left: 50px; margin-top: 50px; font-size: 40px; color: #E3AD03;">WELCOME TO DASHBOARD</h1>
-            </div>
-            <div class="container1">
-              <div class="container" style="gap: 10px;">
-                <!-- content of the displayed price -->
-                    <section class="price-display-layout">
-                    <div class="header-description-text">Price Today <i class="fa fa-info-circle" aria-hidden="true"></i></div>
-                    <div class="price-display"><span class="peso-sign">&#8369;</span> 50.00/kg</div>
-                    <div class="rice-type" style="padding: 0; margin: 0;"></div>
-                  </section>
-                  <p>Well-Milled Rice</p>
+          <a href="./index.html" class="nav-link home active">
+            <span class="icon"><img src="img/home.png" /></span> Home
+          </a>
+          <a href="./Pricing.html" class="nav-link pricing">
+            <span class="icon"><img src="img/peso_symbol.png" /></span> Pricing
+          </a>
+          <a href="./About.html" class="nav-link about">
+            <span class="icon"><img src="img/about.png" /></span> About
+          </a>
+        </nav>
+      </div>
+      <div class="body" style="padding: 20px; align-items: center">
+        <!-- GRID LAYOUT BODY AND ITS CONTENTS  -->
+        <section class="body-layout">
+          <div class="header-container">
+            <h1>WELCOME TO DASHBOARD</h1>
+          </div>
+          <div class="container1">
+            <div class="container" style="gap: 10px">
+              <!-- content of the displayed price -->
+              <section class="price-display-layout">
+                <div class="header-description-text">
+                  Price Today
+                  <i class="fa fa-info-circle" aria-hidden="true"></i>
                 </div>
-            </div>
-            <div class="container2">
-              <div class="container" style="gap: 10px;">
-                <!-- content of the displayed price -->
-                    <section class="price-display-layout">
-                    <div class="header-description-text">Price Today <i class="fa fa-info-circle" aria-hidden="true"></i></div>
-                    <div class="price-display"><span class="peso-sign">&#8369;</span> 50.00/kg</div>
-                    <div class="rice-type" style="padding: 0; margin: 0;"></div>
-                  </section>
-                  <p>Well-Milled Rice</p>
+                <div class="price-display">
+                  <span class="peso-sign">&#8369;</span> 50.00/kg
                 </div>
+                <div class="rice-type" style="padding: 0; margin: 0"></div>
+              </section>
+              <p>Well-Milled Rice</p>
             </div>
-            <div class="container3">
-              <div class="container" style="gap: 10px;">
-                <!-- content of the displayed price -->
-                    <section class="price-display-layout">
-                    <div class="header-description-text">Price Today <i class="fa fa-info-circle" aria-hidden="true"></i></div>
-                    <div class="price-display"><span class="peso-sign">&#8369;</span> 50.00/kg</div>
-                    <div class="rice-type" style="padding: 0; margin: 0;"></div>
-                  </section>
-                  <p>Well-Milled Rice</p>
+          </div>
+          <div class="container2">
+            <div class="container" style="gap: 10px">
+              <!-- content of the displayed price -->
+              <section class="price-display-layout">
+                <div class="header-description-text">
+                  Price Today
+                  <i class="fa fa-info-circle" aria-hidden="true"></i>
                 </div>
-            </div>
-            <div class="container4">
-              <div class="container" style="gap: 10px;">
-                <!-- content of the displayed price -->
-                    <section class="price-display-layout">
-                    <div class="header-description-text">Price Today <i class="fa fa-info-circle" aria-hidden="true"></i></div>
-                    <div class="price-display"><span class="peso-sign">&#8369;</span> 50.00/kg</div>
-                    <div class="rice-type" style="padding: 0; margin: 0;"></div>
-                  </section>
-                  <p>Well-Milled Rice</p>
+                <div class="price-display">
+                  <span class="peso-sign">&#8369;</span> 50.00/kg
                 </div>
+                <div class="rice-type" style="padding: 0; margin: 0"></div>
+              </section>
+              <p>Well-Milled Rice</p>
             </div>
-            <div class="header2-container">
-              <h1 style="text-align: center; font-size: 30px; color: #E3AD03;">Historical Overview of Rice Retail Price</h1>
+          </div>
+          <div class="container3">
+            <div class="container" style="gap: 10px">
+              <!-- content of the displayed price -->
+              <section class="price-display-layout">
+                <div class="header-description-text">
+                  Price Today
+                  <i class="fa fa-info-circle" aria-hidden="true"></i>
+                </div>
+                <div class="price-display">
+                  <span class="peso-sign">&#8369;</span> 50.00/kg
+                </div>
+                <div class="rice-type" style="padding: 0; margin: 0"></div>
+              </section>
+              <p>Well-Milled Rice</p>
             </div>
-            <div class="graph" style="align-items: center;">
-              <div class="container-graph" style="width: 100%; max-height: fit-content; background-color: #fff; padding-top: 20px; text-align: center;">
-                <section class="dropdown-layout">
-                  <div class="grow1"></div>
-                  <div class="grow1">
-                    <div class="year-container">Start Year:
-                      <select name="year-options" id="">
-                        <option value="2024">2024</option>
-                        <option value="2023">2023</option>
-                        <option value="2022">2022</option>
-                        <option value="2021">2021</option>
-                      </select>
-                    </div>
+          </div>
+          <div class="container4">
+            <div class="container" style="gap: 10px">
+              <!-- content of the displayed price -->
+              <section class="price-display-layout">
+                <div class="header-description-text">
+                  Price Today
+                  <i class="fa fa-info-circle" aria-hidden="true"></i>
+                </div>
+                <div class="price-display">
+                  <span class="peso-sign">&#8369;</span> 50.00/kg
+                </div>
+                <div class="rice-type" style="padding: 0; margin: 0"></div>
+              </section>
+              <p>Well-Milled Rice</p>
+            </div>
+          </div>
+          <div class="header2-container">
+            <h1 style="text-align: center; font-size: 30px; color: #e3ad03">
+              Historical Overview of Rice Retail Price
+            </h1>
+          </div>
+          <div class="graph" style="align-items: center">
+            <div
+              class="container-graph"
+              style="
+                width: 100%;
+                max-height: fit-content;
+                background-color: #fff;
+                padding-top: 20px;
+                text-align: center;
+              "
+            >
+              <section class="dropdown-layout">
+                <div class="grow1"></div>
+                <div class="grow1">
+                  <div class="year-container">
+                    Start Year:
+                    <select name="year-options" id="">
+                      <option value="2024">2024</option>
+                      <option value="2023">2023</option>
+                      <option value="2022">2022</option>
+                      <option value="2021">2021</option>
+                    </select>
                   </div>
-                  <div class="grow1">
-                    <div class="year-container">End Year:
-                      <select name="year-options" id="">
-                        <option value="2024">2024</option>
-                        <option value="2023">2023</option>
-                        <option value="2022">2022</option>
-                        <option value="2021">2021</option>
-                      </select>
-                    </div>
-                  </div>
-                </section>
-                <div style="width: 95%; padding: 20px; ">
-                  <canvas id="line-chart"></canvas>
                 </div>
+                <div class="grow1">
+                  <div class="year-container">
+                    End Year:
+                    <select name="year-options" id="">
+                      <option value="2024">2024</option>
+                      <option value="2023">2023</option>
+                      <option value="2022">2022</option>
+                      <option value="2021">2021</option>
+                    </select>
+                  </div>
+                </div>
+              </section>
+              <div style="width: 95%; padding: 20px">
+                <canvas id="line-chart"></canvas>
               </div>
             </div>
-          </section>
-          <!-- GRID LAYOUT BODY AND ITS CONTENTS  ENDS -->
-
-          <div class="right-menu" >
-            <h1 style="text-align: center;font-size: 22px;font-family: Verdana; font-weight: bold;">Last Updates</h1>
-            <div class="update-container">
-              <section class="update-container-layout">
-                <div class="header-description-text"><i class="fa-regular fa-calendar"></i> July 2024</div>
-                <div class="price-display"><span class="peso-sign">&#8369;</span> 53.00/kg</div>
-                </section>
-                <p>Well-Milled Rice</p>
-
-            </div>
-            <div class="update-container">
-              <section class="update-container-layout">
-                <div class="header-description-text"><i class="fa-regular fa-calendar"></i> July 2024</div>
-                <div class="price-display"><span class="peso-sign">&#8369;</span> 53.00/kg</div>
-                </section>
-                <p>Well-Milled Rice</p>
-
-            </div><div class="update-container">
-              <section class="update-container-layout">
-                <div class="header-description-text"><i class="fa-regular fa-calendar"></i> July 2024</div>
-                <div class="price-display"><span class="peso-sign">&#8369;</span> 53.00/kg</div>
-                </section>
-                <p>Well-Milled Rice</p>
-
-            </div>
-            
-
+          </div>
+        </section>
+        <!-- GRID LAYOUT BODY AND ITS CONTENTS  ENDS -->
+      </div>
+      <div class="rightSide">
+        <h1>Last Updates</h1>
+        <div class="update-wrapper">
+          <div class="update-container">
+            <section class="update-container-layout">
+              <div class="header-description-text">
+                <i class="fa-regular fa-calendar"></i> July 2024
+              </div>
+              <div class="price-display">
+                <span class="peso-sign">&#8369;</span> 53.00/kg
+              </div>
+            </section>
+            Well-Milled Rice
+          </div>
+          <div class="update-container">
+            <section class="update-container-layout">
+              <div class="header-description-text">
+                <i class="fa-regular fa-calendar"></i>
+                July 2024
+              </div>
+              <div class="price-display">
+                <span class="peso-sign">&#8369;</span>
+                53.00/kg
+              </div>
+            </section>
+            Well-Milled Rice
+          </div>
+          <div class="update-container">
+            <section class="update-container-layout">
+              <div class="header-description-text">
+                <i class="fa-regular fa-calendar"></i> July 2024
+              </div>
+              <div class="price-display">
+                <span class="peso-sign">&#8369;</span>
+                53.00/kg
+              </div>
+            </section>
+            Well-Milled Rice
+          </div>
+          <div class="update-container">
+            <section class="update-container-layout">
+              <div class="header-description-text">
+                <i class="fa-regular fa-calendar"></i> July 2024
+              </div>
+              <div class="price-display">
+                <span class="peso-sign">&#8369;</span> 53.00/kg
+              </div>
+            </section>
+            Well-Milled Rice
+          </div>
+          <div class="update-container">
+            <section class="update-container-layout">
+              <div class="header-description-text">
+                <i class="fa-regular fa-calendar"></i> July 2024
+              </div>
+              <div class="price-display">
+                <span class="peso-sign">&#8369;</span> 53.00/kg
+              </div>
+            </section>
+            Well-Milled Rice
           </div>
         </div>
-    </div>
-  </body>
+      </div>
+      <div class="footer">
+        <div class="footer-container"></div>
+      </div>
+    </section>
 
-  <script>
-    document.querySelectorAll(".nav-link").forEach((link) => {
-      link.addEventListener("click", function () {
-        document
-          .querySelectorAll(".nav-link")
-          .forEach((link) => link.classList.remove("active"));
-        this.classList.add("active");
-      });
-    });
-
-// chart script
-const ctx = document.getElementById('line-chart');
-
-new Chart(ctx, {
-  type: 'line',
-  data: {
-    labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024'],
-    datasets: [{
-      label: 'Special',
-      data: [12, 19, 3, 5, 2, 3, 45, 12, 23, 34, 22, 12],
-      borderWidth: 2,
-      pointBackgroundColor: 'rgba(255,255,255, 0.9)',
-      radius: 5
-    }, {
-      label: 'Well Milled',
-      data: [2, 5, 32, 1, 3, 5, 56, 43, 33, 21, 12, 22],
-      borderWidth: 2,
-      pointBackgroundColor: 'rgba(255,255,255, 0.9)',
-      radius: 5
-
-    }, {
-      label: 'Premium',
-      data: [3, 6, 11, 35, 65, 24, 65, 43, 33, 66, 67,89],
-      borderWidth: 2,
-      pointBackgroundColor: 'rgba(255,255,255, 0.9)',
-      radius: 5
-
-    }, {
-      label: 'Regular',
-      data: [5, 23, 45, 11, 23, 4, 67, 77, 78, 88, 89, 90],
-      borderWidth: 2,
-      pointBackgroundColor: 'rgba(255,255,255, 0.9)',
-      radius: 5
-
-    }]
-  },
-  options: {
-    plugins:{
-      legend: {
-      position: 'left'
-    }},
-    scales: {
-      y: {
-        beginAtZero: true
+    <script>
+      // JavaScript function to toggle menu display
+      function toggleMenu() {
+        const menuContent = document.getElementById("mySidenav");
+        menuContent.style.width =
+          menuContent.style.width === "250px" ? "0px" : "250px";
       }
-    },
-  }
-});
 
+      document.querySelectorAll(".nav-link").forEach((link) => {
+        link.addEventListener("click", function () {
+          document
+            .querySelectorAll(".nav-link")
+            .forEach((link) => link.classList.remove("active"));
+          this.classList.add("active");
+        });
+      });
 
-  </script>
+      // chart script
+      const ctx = document.getElementById("line-chart");
+
+      new Chart(ctx, {
+        type: "line",
+        data: {
+          labels: [
+            "2013",
+            "2014",
+            "2015",
+            "2016",
+            "2017",
+            "2018",
+            "2019",
+            "2020",
+            "2021",
+            "2022",
+            "2023",
+            "2024",
+          ],
+          datasets: [
+            {
+              label: "Special",
+              data: [12, 19, 3, 5, 2, 3, 45, 12, 23, 34, 22, 12],
+              borderWidth: 2,
+              pointBackgroundColor: "rgba(255,255,255, 0.9)",
+              radius: 5,
+            },
+            {
+              label: "Well Milled",
+              data: [2, 5, 32, 1, 3, 5, 56, 43, 33, 21, 12, 22],
+              borderWidth: 2,
+              pointBackgroundColor: "rgba(255,255,255, 0.9)",
+              radius: 5,
+            },
+            {
+              label: "Premium",
+              data: [3, 6, 11, 35, 65, 24, 65, 43, 33, 66, 67, 89],
+              borderWidth: 2,
+              pointBackgroundColor: "rgba(255,255,255, 0.9)",
+              radius: 5,
+            },
+            {
+              label: "Regular",
+              data: [5, 23, 45, 11, 23, 4, 67, 77, 78, 88, 89, 90],
+              borderWidth: 2,
+              pointBackgroundColor: "rgba(255,255,255, 0.9)",
+              radius: 5,
+            },
+          ],
+        },
+        options: {
+          plugins: {
+            legend: {
+              position: "left",
+            },
+          },
+          scales: {
+            y: {
+              beginAtZero: true,
+            },
+          },
+        },
+      });
+    </script>
+  </body>
 </html>

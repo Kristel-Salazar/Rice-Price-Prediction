@@ -6,7 +6,7 @@
     <title>Home</title>
     <link rel="stylesheet" href="./css/home.css" />
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="/node_modules/chart.js/dist/chart.umd.js"></script>
+    <script src="./node_modules/chart.js/dist/chart.umd.js"></script>
   </head>
   <body>
     <section class="layout">
@@ -300,71 +300,6 @@
             .forEach((link) => link.classList.remove("active"));
           this.classList.add("active");
         });
-      });
-
-      // chart script
-      const ctx = document.getElementById("line-chart");
-
-      new Chart(ctx, {
-        type: "line",
-        data: {
-          labels: [
-            "2013",
-            "2014",
-            "2015",
-            "2016",
-            "2017",
-            "2018",
-            "2019",
-            "2020",
-            "2021",
-            "2022",
-            "2023",
-            "2024",
-          ],
-          datasets: [
-            {
-              label: "Special",
-              data: [12, 19, 3, 5, 2, 3, 45, 12, 23, 34, 22, 12],
-              borderWidth: 2,
-              pointBackgroundColor: "rgba(255,255,255, 0.9)",
-              radius: 5,
-            },
-            {
-              label: "Well Milled",
-              data: [2, 5, 32, 1, 3, 5, 56, 43, 33, 21, 12, 22],
-              borderWidth: 2,
-              pointBackgroundColor: "rgba(255,255,255, 0.9)",
-              radius: 5,
-            },
-            {
-              label: "Premium",
-              data: [3, 6, 11, 35, 65, 24, 65, 43, 33, 66, 67, 89],
-              borderWidth: 2,
-              pointBackgroundColor: "rgba(255,255,255, 0.9)",
-              radius: 5,
-            },
-            {
-              label: "Regular",
-              data: [5, 23, 45, 11, 23, 4, 67, 77, 78, 88, 89, 90],
-              borderWidth: 2,
-              pointBackgroundColor: "rgba(255,255,255, 0.9)",
-              radius: 5,
-            },
-          ],
-        },
-        options: {
-          plugins: {
-            legend: {
-              position: "left",
-            },
-          },
-          scales: {
-            y: {
-              beginAtZero: true,
-            },
-          },
-        },
       });
     </script>
   </body>

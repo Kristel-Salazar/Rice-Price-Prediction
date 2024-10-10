@@ -333,8 +333,6 @@ body {
 
 /* dropdown year menu */
 select {
-  -moz-appearance: none;
-  -webkit-appearance: none;
   padding: 8px 40px;
   background-color: #fff;
   border-color: #969696;

@@ -841,4 +841,122 @@ input {
     margin-bottom: 20px;
   }
   /* pop-up window container ends */
+
+  /* FOOTER CONTAINER AND ITS CONTENTS */
+  .footer-container {
+    width: inherit;
+    padding: 10px;
+    background: rgb(93, 103, 73);
+    background: linear-gradient(
+      0deg,
+      rgba(93, 103, 73, 1) 0%,
+      rgba(122, 135, 96, 1) 35%,
+      rgba(156, 172, 122, 1) 100%
+    );
+    max-height: fit-content;
+  }
+
+  .footer-layout {
+    width: 100%;
+
+    display: grid;
+    grid:
+      "logo-row" 0.5fr
+      "grow1" 0.2fr
+      / 1fr;
+    gap: 8px;
+  }
+
+  .logo-row {
+    grid-area: logo-row;
+    display: flex;
+    justify-content: center;
+  }
+  .grow1 {
+    grid-area: grow1;
+    display: flex;
+    justify-content: center;
+    padding: 0px;
+    padding-bottom: 20px;
+  }
+  /* LOGO AND ITS TEXTS */
+
+  /* footer logo layout */
+  .footer-layout .layout {
+    max-width: fit-content;
+
+    display: grid;
+    grid:
+      "logo logo-text-container" 0.1fr
+      "logo subtitle-container" 0.3fr
+      / 0.1fr 1fr;
+    gap: 8px;
+  }
+
+  .footer-layout .logo {
+    grid-area: logo;
+    padding: 5px;
+  }
+  .footer-layout .logo-text-container {
+    grid-area: logo-text-container;
+  }
+  .footer-layout .subtitle-container {
+    grid-area: subtitle-container;
+  }
+  /* footer logo layout ends */
+
+  .footer-layout .menu .logo-container {
+    max-width: fit-content;
+    height: 14%;
+    display: flex;
+    align-items: center;
+  }
+
+  .footer-layout .img_logo {
+    max-width: 55px;
+  }
+  .footer-layout .logo-text-container .text-logo span {
+    font-size: 25px;
+    font-weight: 700;
+    display: inline-block;
+    font-family: Spectral;
+  }
+  .footer-layout .text-content {
+    font-family: "Spectral", serif;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .footer-layout .subtitle {
+    margin-top: -10%;
+    font-family: "Spectral", serif;
+    font-weight: bolder;
+    font-size: 8px;
+    color: #000000;
+  }
+  /* LOGO ENDS */
+  .footer-layout .grow1 a {
+    margin: 0 10px; /* Add spacing between links */
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s ease;
+    border-left: 2px solid #333;
+    padding-left: 2px;
+    font-size: 10px;
+  }
+
+  .footer-copyright {
+    padding: 5px;
+    text-align: end;
+    border-top: 1px solid #333;
+    display: flex;
+    justify-content: center;
+  }
+  .footer-copyright p {
+    font-size: 10px;
+    color: #333;
+  }
+  /* FOOTER CONTAINER AND ITS CONTENTS ENDS */
 }

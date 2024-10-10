@@ -295,6 +295,21 @@ body {
 
 /* Responsive Design for Mobile View */
 @media (max-width: 768px) {
+    .main-content{
+        height:max-content;
+    }
+    .why{
+        width: max-content;
+        height: max-content;
+    }
+    .item p{
+        font-size: 10px;
+        margin-bottom: 20px;
+    }
+    .item .fi{
+        font-size: 7px;
+    }
+
   .header-container {
     display: flex;
     justify-content: center; /* Center horizontally */
@@ -417,69 +432,6 @@ body {
 .nav-link.active .icon {
     font-size: 18px;
 }
-
-  /* /retail rice prediction container and its content */
-  .retail-rice-prediction-container {
-    max-width: fit-content;
-    max-height: fit-content;
-    background-color: #bacd92;
-    margin: 0 auto;
-    border-radius: 3%;
-  }
-  p {
-    font-size: 10px;
-  }
-  .retail-rice-prediction-container {
-    width: 80%;
-    max-height: fit-content;
-    background-color: #bacd92;
-    margin: 0 auto;
-    border-radius: 3%;
-    padding: 10px 20px;
-  }
-
-  .rice-retail-prediction-layout p {
-    font-size: 10px;
-  }
-
-  .retail-rice-prediction-layout select,
-  input {
-    font-size: 10px;
-  }
-
-  .predict-button {
-    font-size: 10px;
-  }
-
-  /* retail rice prediction container and its contents ends */
-
-  /* BODY AND ITS CONTENTS */
-  .retail-price-container {
-    text-align: center;
-  }
-  .retail-price-container h1 {
-    padding: 0px;
-    margin: 0px;
-    margin-bottom: 10px;
-    font-size: 25px;
-    color: #e3ad03;
-    width: 100%;
-  }
-
-  .headline-container {
-    text-align: center;
-    margin-bottom: 2%;
-    font-size: 20px;
-    color: #e3ad03;
-  }
-
-  h2 {
-    margin: 20px;
-    margin-top: 30px;
-    font-size: 20px;
-    color: #e3ad03;
-    text-align: center;
-  }
   /* BODY AND ITS CONTENTS ENDS */
 
   /* pop-up window container and it's content */
@@ -585,8 +537,6 @@ body {
     margin-bottom: 20px;
   }
   /* pop-up window container ends */
-
-  /* FOOTER CONTAINER AND ITS CONTENTS */
   .footer-container {
     width: inherit;
     padding: 10px;
@@ -702,58 +652,51 @@ body {
     font-size: 10px;
     color: #333;
   }
-  /* FOOTER CONTAINER AND ITS CONTENTS ENDS */
-}
 
+  .mission .semi-con {
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    padding: 15px; 
+    margin: 10px auto;
+    max-width: 90%;
+  }
 
+  .mission .semi-con h2 {
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+    color: #000000;
+  }
 
-/*RESPONSIVE MOBILE*/
-/* Responsive Design for Mobile View */
-/* Further Responsive Adjustments for Mobile View */
-@media (max-width: 768px) {
-    .mission .semi-con {
-      background-size: cover;
-      background-position: center;
-      border-radius: 10px;
-      padding: 15px; /* Adjusted padding for a cleaner look */
-      margin: 10px auto; /* Center the content */
-      max-width: 90%; /* Limit the width for better readability */
-    }
-  
-    .mission .semi-con h2 {
-      font-size: 20px; /* Increased size for readability */
-      text-align: center;
-      font-weight: bold;
-      color: #000000;
-    }
-  
-    .mission .semi-con p {
-      font-size: 14px; /* Reduced size for mobile */
-      text-align: justify; /* Makes text easier to read */
-      color: #000000;
-      margin: 5px 0; /* Space out paragraphs */
-    }
-  
-    .why {
-      text-align: center;
-      margin: 15px 10px; /* More space for better visual balance */
-    }
-  
-    .why .item {
-      display: flex;
-      flex-direction: column; /* Stack items vertically */
-      align-items: center; /* Center content for better alignment */
-      margin: 10px 0; /* Increase spacing between items */
-    }
-  
-    .why .item p {
-      font-size: 14px; /* Adjust font size for readability */
-      padding: 0 5px; /* Smaller padding for better fit */
-    }
-  
-    .why .item img {
-      width: 40px; /* Adjust size for mobile screens */
-      margin-bottom: 8px; /* Space between icon and text */
-    }
+  .mission .semi-con p {
+    font-size: 14px;
+    text-align: justify; 
+    color: #000000;
+    margin: 5px 0; 
+
+  .why {
+    text-align: center;
+    margin: 15px 10px;
+  }
+
+  .why .item {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    margin: 10px 0; 
+  }
+
+  .why .item p {
+    font-size: 14px;
+    padding: 0 5px;
+  }
+
+  .why .item img {
+    width: 40px; 
+    margin-bottom: 8px;
   }
   
+}
+}
+

@@ -1,3 +1,18 @@
+// JavaScript function to toggle menu display
+function toggleMenu() {
+  const menuContent = document.getElementById("mySidenav");
+  menuContent.style.width =
+    menuContent.style.width === "250px" ? "0px" : "250px";
+}
+document.querySelectorAll(".nav-link").forEach((link) => {
+  link.addEventListener("click", function () {
+    document
+      .querySelectorAll(".nav-link")
+      .forEach((link) => link.classList.remove("active"));
+    this.classList.add("active");
+  });
+});
+
 // CHART AND ITS CONFIGURATIONS
 let myChart1, myChart2;
 const uniqueYears = new Set();

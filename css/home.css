@@ -721,6 +721,7 @@ select {
     flex-direction: column; /* Stack elements vertically if needed */
     max-width: fit-content;
     padding: 10px;
+    padding-right: 3px;
   }
   .body-layout .container1 .container {
     display: flex; 

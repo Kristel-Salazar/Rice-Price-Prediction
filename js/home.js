@@ -215,7 +215,7 @@ function updateChart() {
     options: {
       layout: {
         padding: {
-          bottom: 50,
+          bottom: 59,
         },
       },
       maintainAspectRatio: false,
@@ -231,11 +231,11 @@ function updateChart() {
             display: true,
           },
           grid: {
-            drawTicks: true,
+            drawTicks: false,
           },
           beginAtZero: false,
           title: {
-            display: false,
+            display: true,
             text: "Price",
           },
 

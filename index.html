@@ -7,6 +7,10 @@
     <link rel="stylesheet" href="./css/home.css" />
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="./node_modules/chart.js/dist/chart.umd.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/2.6.0/uicons-solid-straight/css/uicons-solid-straight.css"
+    />
   </head>
   <body>
     <section class="layout">
@@ -150,6 +154,7 @@
                 max-height: fit-content;
                 background-color: #fff;
                 padding-top: 20px;
+                padding: 20px;
                 text-align: center;
               "
             >
@@ -158,28 +163,52 @@
                 <div class="grow1">
                   <div class="year-container">
                     Start Year:
-                    <select name="year-options" id="">
-                      <option value="2024">2024</option>
-                      <option value="2023">2023</option>
-                      <option value="2022">2022</option>
-                      <option value="2021">2021</option>
-                    </select>
+                    <select name="year-options" id="startYear"></select>
                   </div>
                 </div>
                 <div class="grow1">
                   <div class="year-container">
                     End Year:
-                    <select name="year-options" id="">
-                      <option value="2024">2024</option>
-                      <option value="2023">2023</option>
-                      <option value="2022">2022</option>
-                      <option value="2021">2021</option>
-                    </select>
+                    <select name="year-options" id="endYear"></select>
                   </div>
                 </div>
               </section>
-              <div style="width: 95%; padding: 20px">
-                <canvas id="line-chart"></canvas>
+              <div class="label-container">
+                <div class="container1">
+                  <i
+                    class="fi fi-ss-no-people"
+                    style="color: rgba(54, 162, 235, 1)"
+                  ></i>
+                  <p>Regular Rice</p>
+                </div>
+                <div class="container1">
+                  <i
+                    class="fi fi-ss-no-people"
+                    style="color: rgba(255, 99, 132, 1)"
+                  ></i>
+                  <p>Premium</p>
+                </div>
+                <div class="container1">
+                  <i class="fi fi-ss-no-people" style="color: #dcf16f"></i>
+                  <p>Special</p>
+                </div>
+                <div class="container1">
+                  <i
+                    class="fi fi-ss-no-people"
+                    style="color: rgba(153, 102, 255, 1)"
+                  ></i>
+                  <p>Well Milled</p>
+                </div>
+              </div>
+              <div class="chart-container">
+                <div class="chart-small">
+                  <canvas id="line-chart1"></canvas>
+                </div>
+                <div class="chart-large">
+                  <div class="box">
+                    <canvas id="line-chart2"></canvas>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -284,23 +313,10 @@
         </div>
       </div>
     </section>
-
-    <script>
-      // JavaScript function to toggle menu display
-      function toggleMenu() {
-        const menuContent = document.getElementById("mySidenav");
-        menuContent.style.width =
-          menuContent.style.width === "250px" ? "0px" : "250px";
-      }
-
-      document.querySelectorAll(".nav-link").forEach((link) => {
-        link.addEventListener("click", function () {
-          document
-            .querySelectorAll(".nav-link")
-            .forEach((link) => link.classList.remove("active"));
-          this.classList.add("active");
-        });
-      });
-    </script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/chart.js/dist/chart.umd.min.js"
+    ></script>
+    <script src="./js/home.js"></script>
   </body>
 </html>

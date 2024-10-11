@@ -333,10 +333,10 @@ body {
 
 /* dropdown year menu */
 select {
-  padding: 8px 40px;
+  padding: 6px 40px;
   background-color: #fff;
   border-color: #969696;
-  font-size: 18px;
+  font-size: 14px;
   font-weight: bold;
 }
 /* graph container and its content */
@@ -472,6 +472,55 @@ select {
 .header {
   display: none;
 }
+
+/* CHART  */
+.label-container {
+  display: flex;
+  align-items: center; /* Vertically center items */
+  justify-content: center; /* Horizontally center items */
+  text-align: center;
+  padding-top: 40px;
+  gap: 25px;
+}
+.label-container .container1 {
+  display: flex;
+  padding: 0px;
+  margin: 0px;
+  background-color: none;
+  gap: 2px;
+}
+
+.label-container .container1 p {
+  font-size: 12px;
+}
+
+.chart-container {
+  width: 100%;
+  padding: 20px;
+  border: none;
+  background: none;
+  margin-bottom: 20px;
+  overflow-x: auto; /* Allow horizontal scrolling */
+  display: flex;
+}
+canvas {
+  width: 100%; /* Allow the canvas to be responsive */
+  height: 100%;
+}
+.chart-small {
+  width: 51px;
+}
+.chart-large {
+  width: 90%;
+  overflow-x: scroll;
+}
+
+.box {
+  width: calc(500vh - 51px);
+  height: 500px;
+}
+
+/* CHART ENDS */
 
 /* Responsive Design for Mobile View */
 @media (max-width: 768px) {
@@ -950,4 +999,30 @@ select {
     color: #333;
   }
   /* FOOTER CONTAINER AND ITS CONTENTS ENDS */
+
+  /* chart */
+  .chart-container {
+    width: 90%;
+    padding: 20px;
+  }
+  canvas {
+    width: 100%; /* Allow the canvas to be responsive */
+    height: 100%;
+  }
+  .chart-small {
+    width: 51px;
+    padding-top: 20px;
+    padding-bottom: 2px;
+  }
+  .chart-large {
+    width: 80%;
+    padding: 20px;
+    overflow-x: scroll;
+  }
+
+  .box {
+    width: calc(500vh - 51px);
+    height: 500px;
+  }
+  /* chart ends */
 }

@@ -203,8 +203,8 @@ body {
   width: 70%;
   margin: 0 auto;
 }
-/* line chart container ends */
 
+/* Title styles */
 h2 {
   margin: 20px;
   margin-top: 30px;
@@ -212,26 +212,43 @@ h2 {
   color: #e3ad03;
   text-align: center;
 }
+
+/* Dropdown container styles */
 .retail-price-container .container .dropdown-container {
-  max-width: fit-content;
-  float: right;
+  width: 100%; /* Ensures the container takes full width */
+  text-align: right; /* Aligns the dropdown to the right */
   padding-bottom: 4%;
 }
 
-/* drop down */
+/* Dropdown menu */
 .dropdown-container select {
   padding: 5px 40px;
   background-color: #fff;
   border-color: #969696;
   font-size: 18px;
   font-weight: bold;
-  margin-left: 10px;
 }
 .start-year {
   margin-right: 20px;
 }
 
-/* drop down ends  */
+/* Label container */
+.label-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px; /* Space between labels */
+  margin-bottom: 20px; /* Space below the label container */
+}
+
+.label-container .container1 {
+  text-align: center;
+}
+
+.label-container .container1 p {
+  margin-top: 5px;
+  font-size: 16px;
+  font-weight: bold;
+}
 
 /* /retail rice prediction container and its content */
 
@@ -547,6 +564,28 @@ input {
 .header {
   display: none;
 }
+
+/* CHART */
+.label-container {
+  display: flex;
+  align-items: center; /* Vertically center items */
+  justify-content: center; /* Horizontally center items */
+  text-align: center;
+  padding-top: 40px;
+  gap: 25px;
+}
+.label-container .container1 {
+  display: flex;
+  padding: 0px;
+  margin: 0px;
+  background-color: none;
+  gap: 2px;
+}
+
+.label-container .container1 p {
+  font-size: 12px;
+}
+/* CHART ENDS */
 
 /* Responsive Design for Mobile View */
 @media (max-width: 768px) {
@@ -959,4 +998,24 @@ input {
     color: #333;
   }
   /* FOOTER CONTAINER AND ITS CONTENTS ENDS */
+
+  /* CHART */
+  /* Label container */
+  .label-container {
+    display: flex;
+    justify-content: center;
+    gap: 5px; /* Space between labels */
+    margin-bottom: 20px; /* Space below the label container */
+  }
+
+  .label-container .container1 {
+    text-align: center;
+  }
+
+  .label-container .container1 p {
+    margin-top: 5px;
+    font-size: 8px;
+    font-weight: bold;
+  }
+  /* CHART ENDS */
 }

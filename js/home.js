@@ -66,24 +66,23 @@ async function getData(url, type) {
   }
 }
 
-// Use updated raw GitHub URLs
 setupChart();
 
 async function setupChart() {
   await getData(
-    "https://raw.githubusercontent.com/Kristel-Salazar/Rice-Price-Prediction/8696d5b474e2ed6678dbc0eacf7dd4c368b36784/datasets/reduced_premium_rice.csv",
+    "https://raw.githubusercontent.com/Kristel-Salazar/Rice-Price-Prediction/7f3e6839e1043c7a9f5b143e2448519475afb29b/datasets/reduced_premium_rice.csv",
     "premium"
   );
   await getData(
-    "https://raw.githubusercontent.com/Kristel-Salazar/Rice-Price-Prediction/8696d5b474e2ed6678dbc0eacf7dd4c368b36784/datasets/reduced_regular_milled_rice.csv",
+    "https://raw.githubusercontent.com/Kristel-Salazar/Rice-Price-Prediction/7f3e6839e1043c7a9f5b143e2448519475afb29b/datasets/reduced_regular_milled_rice.csv",
     "regular"
   );
   await getData(
-    "https://raw.githubusercontent.com/Kristel-Salazar/Rice-Price-Prediction/8696d5b474e2ed6678dbc0eacf7dd4c368b36784/datasets/reduced_special_rice.csv",
+    "https://raw.githubusercontent.com/Kristel-Salazar/Rice-Price-Prediction/7f3e6839e1043c7a9f5b143e2448519475afb29b/datasets/reduced_special_rice.csv",
     "special"
   );
   await getData(
-    "https://raw.githubusercontent.com/Kristel-Salazar/Rice-Price-Prediction/8696d5b474e2ed6678dbc0eacf7dd4c368b36784/datasets/reduced_well_milled_rice.csv",
+    "https://raw.githubusercontent.com/Kristel-Salazar/Rice-Price-Prediction/7f3e6839e1043c7a9f5b143e2448519475afb29b/datasets/reduced_well_milled_rice.csv",
     "wellMilled"
   );
 

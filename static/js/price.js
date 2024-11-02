@@ -193,3 +193,75 @@ document.getElementById("year-options").addEventListener("change", function () {
   // Re-render the chart
   chart.update();
 });
+
+function submitForm() {
+  const month = document.getElementById("month").value;
+  const type = document.getElementById("rice_type").value;
+  const year = document.getElementById("year").value;
+
+  // Use Fetch API to send data to the server
+  fetch("/pricing", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded",
+    },
+    body: new URLSearchParams({
+      month: month,
+      type: type,
+      year: year,
+    }),
+  })
+    .then((response) => response.json()) // Expecting JSON response
+    .then((data) => {
+      showModal(data.month, data.type, data.year, data.price); // Show the data in a modal
+    })
+    .catch((error) => console.error("Error:", error));
+}
+
+function showModal(month, type, year, price) {
+  const modal = document.getElementById("pop-up");
+  document.getElementById("predicted_month").innerText = month;
+  document.getElementById("predicted_type").innerText = type;
+  document.getElementById("predicted_year").innerText = year;
+  document.getElementById("predicted_price").innerText = price;
+  modal.style.display = "block";
+}
+
+function closeModal() {
+  const modal = document.getElementById("pop-up");
+  modal.style.display = "none";
+}
+
+// Progress bar script
+function startTask() {
+  // Show the modal when the task starts
+  document.getElementById("progress-modal").style.display = "block";
+
+  // Start the task on the server
+  fetch("/start-task", { method: "POST" })
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data.status);
+      updateProgress(); // Begin polling for progress updates
+    });
+}
+
+function updateProgress() {
+  fetch("/progress")
+    .then((response) => response.json())
+    .then((data) => {
+      const progressBar = document.getElementById("progress-bar");
+      progressBar.style.width = data.progress + "%";
+      progressBar.innerText = data.progress + "%";
+
+      // Continue updating if task not completed
+      if (data.progress < 100) {
+        setTimeout(updateProgress, 500); // Poll every 500 ms
+      } else {
+        // Close the modal when the task is complete
+        setTimeout(() => {
+          document.getElementById("progress-modal").style.display = "none";
+        }, 1000); // Delay for 1 second before closing
+      }
+    });
+}

@@ -331,4 +331,3 @@ setupChart();
 
 // Instantly assign Chart.js version
 const chartVersion = document.getElementById("chartVersion");
-chartVersion.innerText = Chart.version;

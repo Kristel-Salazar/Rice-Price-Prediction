@@ -11,6 +11,9 @@ from math import sqrt
 import calendar 
 import threading
 import time 
+import joblib
+import joblib
+from tensorflow.keras.models import load_model
 
 app = Flask(__name__)
 
@@ -31,7 +34,6 @@ def index():
 def pricing():
     global progress
     if request.method == 'POST':
-
         month = int(request.form.get('month'))
         month_name = calendar.month_name[month]
         type = request.form.get('type')
@@ -42,74 +44,70 @@ def pricing():
         with progress_lock:
             progress = 10  # Start progress at 10%
 
-        # Load and preprocess data
-        # loading data by rice type
+        # Load and preprocess data based on rice type
         if type.lower() == "regular":
+            # Load the pre-trained scaler and model
+            scaler = joblib.load('static/models/regular_scaler.pkl')
+            # model = load_model('lstm_premium_rice_price_model.h5')
+            model = load_model('static/models/lstm_regular_rice_price_model.h5', compile=False)
+
             df = pd.read_csv('static/datasets/reduced_regular_milled_rice.csv')
         elif type.lower() == "premium":
+            # Load the pre-trained scaler and model
+            scaler = joblib.load('static/models/premium_scaler.pkl')
+            # model = load_model('lstm_premium_rice_price_model.h5')
+            model = load_model('static/models/lstm_premium_rice_price_model.h5', compile=False)
+
             df = pd.read_csv('static/datasets/reduced_premium_rice.csv')
         elif type.lower() == "special":
+            # Load the pre-trained scaler and model
+            scaler = joblib.load('static/models/special_scaler.pkl')
+            # model = load_model('lstm_premium_rice_price_model.h5')
+            model = load_model('static/models/lstm_special_rice_price_model.h5', compile=False)
+
             df = pd.read_csv('static/datasets/reduced_special_rice.csv')
         elif type.lower() == "well milled":
-            df = pd.read_csv('datasets/redunced_well_milled.csv')
+            # Load the pre-trained scaler and model
+            scaler = joblib.load('static/models/well_milled_scaler.pkl')
+            # model = load_model('lstm_premium_rice_price_model.h5')
+            model = load_model('static/models/lstm_well_milled_rice_price_model.h5', compile=False)
 
+            df = pd.read_csv('static/datasets/reduced_well_milled_rice.csv')
+
+        # Ensure MONTH column is integer and create DATE column
         df['MONTH'] = df['MONTH'].astype(int)
         df["DATE"] = pd.to_datetime(df['YEAR'].astype(str) + '/' + df['MONTH'].astype(str) + '/01')
         df = df.set_index('DATE').asfreq('MS')
 
-        with progress_lock:
-            progress = 20  # Update progress after data load
-
         # Select column for price prediction
         df = df[['Price / kg']]
 
+        progress = 30
+
+
         # Perform seasonal decomposition
-        results = seasonal_decompose(df)
+        # (If this is needed for analysis but not directly part of the LSTM input, it can stay as is)
+        # results = seasonal_decompose(df)  # Uncomment if you want to see seasonal decomposition
 
         # Split data into train and test sets
         train = df.iloc[:-12]
         test = df.iloc[-12:]
 
-        with progress_lock:
-            progress = 30  # Update progress after preprocessing
 
-        # Scale data
-        scaler = MinMaxScaler()
-        scaler.fit(train)
+
+        # Scale data using the loaded scaler
         scaled_train = scaler.transform(train)
 
-        with progress_lock:
-            progress = 40  # Update progress after decomposition
-
+        progress = 60
 
         # Define generator for LSTM
         n_input = 345
         n_features = 1
         generator = TimeseriesGenerator(scaled_train, scaled_train, length=n_input, batch_size=1)
 
-        with progress_lock:
-            progress = 50  # Update after scaling
-
-        model = Sequential([
-            LSTM(100, activation='relu', input_shape=(n_input, n_features)),
-            Dense(1)
-        ])
-        with progress_lock:
-            progress = 60  # Update after model definition
-
-        model.compile(optimizer='adam', loss='mse')
-        # Fit the model
-        model.fit(generator, epochs=50)
-
-        with progress_lock:
-            progress = 80  # Update after model training
-
         # Prepare for predictions
         last_train_batch = scaled_train[-n_input:]
         current_batch = last_train_batch.reshape((1, n_input, n_features))
-
-        with progress_lock:
-            progress = 90  # Update after generating test predictions
 
         # Generate predictions for test set
         test_predictions = []
@@ -121,6 +119,8 @@ def pricing():
         # Inverse transform predictions to original scale
         true_predictions = scaler.inverse_transform(test_predictions).flatten()
         test['Predictions'] = true_predictions
+
+        progress = 70
 
         # Calculate evaluation metrics
         rmse = sqrt(mean_squared_error(test['Price / kg'], test['Predictions']))
@@ -135,6 +135,8 @@ def pricing():
             current_pred = model.predict(current_batch)[0]
             future_predictions.append(current_pred)
             current_batch = np.append(current_batch[:, 1:, :], [[current_pred]], axis=1)
+
+        progress = 80
 
         # Inverse transform future predictions
         actual_future_predictions = scaler.inverse_transform(future_predictions)

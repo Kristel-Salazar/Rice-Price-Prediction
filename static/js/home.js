@@ -331,3 +331,74 @@ setupChart();
 
 // Instantly assign Chart.js version
 const chartVersion = document.getElementById("chartVersion");
+
+async function updateRicePrices() {
+  try {
+    const response = await fetch("/api/prices");
+    if (!response.ok) {
+      throw new Error("Network response was not ok");
+    }
+
+    const ricePrices = await response.json();
+    console.log("Fetched rice prices:", ricePrices);
+
+    const currentDate = new Date();
+    const currentMonth = currentDate.toLocaleString("default", {
+      month: "long",
+    });
+    const currentYear = currentDate.getFullYear();
+
+    // Mapping rice types to their respective display IDs
+    const riceTypes = {
+      regular: "regular-price",
+      premium: "premium-price",
+      "well milled": "well-milled-price", // Corrected the key here
+      special: "special-price",
+    };
+
+    for (const type in riceTypes) {
+      const priceSectionId = riceTypes[type];
+      const prices = ricePrices[type]; // No change here
+
+      console.log(`Prices for ${type}:`, prices);
+
+      // Check if prices is defined and is an array
+      if (Array.isArray(prices)) {
+        const priceData = prices.find(
+          (price) => price.month === currentMonth && price.year === currentYear
+        );
+
+        if (priceData) {
+          const priceDisplay = document
+            .getElementById(priceSectionId)
+            .querySelector(".price-display");
+          priceDisplay.innerHTML = `<span class="peso-sign">&#8369;</span> ${priceData.price.toFixed(
+            2
+          )}/kg`;
+        } else {
+          console.warn(
+            `No price data found for ${type} in ${currentMonth} ${currentYear}`
+          );
+          const priceDisplay = document
+            .getElementById(priceSectionId)
+            .querySelector(".price-display");
+          priceDisplay.innerHTML = `<span class="peso-sign">&#8369;</span> Not available`;
+        }
+      } else {
+        console.error(
+          `Expected prices to be an array for ${type}, but got:`,
+          prices
+        );
+        const priceDisplay = document
+          .getElementById(priceSectionId)
+          .querySelector(".price-display");
+        priceDisplay.innerHTML = `<span class="peso-sign">&#8369;</span> Not available`;
+      }
+    }
+  } catch (error) {
+    console.error("Error fetching rice prices:", error);
+  }
+}
+
+// Call the function to update prices on page load
+window.onload = updateRicePrices;

@@ -10,10 +10,12 @@ from sklearn.metrics import mean_squared_error, mean_absolute_error
 from math import sqrt
 import calendar 
 import threading
-import time 
 import joblib
 import joblib
 from tensorflow.keras.models import load_model
+import json
+import datetime
+import os
 
 app = Flask(__name__)
 
@@ -171,6 +173,122 @@ def start_task():
 def get_progress():
     global progress
     return jsonify(progress=progress)
+
+
+def predict_all_rice_types(num_years):
+    current_year = datetime.datetime.now().year
+    json_path = 'static/predictions/rice_price_predictions.json'
+    
+    # Check if JSON exists and if predictions are up-to-date
+    if os.path.exists(json_path):
+        with open(json_path, 'r') as f:
+            existing_data = json.load(f)
+            # Get the latest year in the existing predictions
+            latest_year_in_data = min(
+                min(item['year'] for item in rice_data) 
+                for rice_data in existing_data.values()
+            )
+            
+            # If latest year in data is current, no need to update predictions
+            if latest_year_in_data >= current_year:
+                print("Predictions are up-to-date.")
+                return existing_data
+    
+    # Prediction models and paths setup
+    rice_types = {
+        "regular": {
+            "scaler_path": 'static/models/regular_scaler.pkl',
+            "model_path": 'static/models/lstm_regular_rice_price_model.h5',
+            "data_path": 'static/datasets/reduced_regular_milled_rice.csv'
+        },
+        "premium": {
+            "scaler_path": 'static/models/premium_scaler.pkl',
+            "model_path": 'static/models/lstm_premium_rice_price_model.h5',
+            "data_path": 'static/datasets/reduced_premium_rice.csv'
+        },
+        "special": {
+            "scaler_path": 'static/models/special_scaler.pkl',
+            "model_path": 'static/models/lstm_special_rice_price_model.h5',
+            "data_path": 'static/datasets/reduced_special_rice.csv'
+        },
+        "well milled": {
+            "scaler_path": 'static/models/well_milled_scaler.pkl',
+            "model_path": 'static/models/lstm_well_milled_rice_price_model.h5',
+            "data_path": 'static/datasets/reduced_well_milled_rice.csv'
+        }
+    }
+    
+    all_predictions = {}
+
+    for rice_type, paths in rice_types.items():
+        # Load scaler, model, and data
+        scaler = joblib.load(paths['scaler_path'])
+        model = load_model(paths['model_path'], compile=False)
+        df = pd.read_csv(paths['data_path'])
+        
+        # Prepare and preprocess data
+        df['MONTH'] = df['MONTH'].astype(int)
+        df["DATE"] = pd.to_datetime(df['YEAR'].astype(str) + '/' + df['MONTH'].astype(str) + '/01')
+        df = df.set_index('DATE').asfreq('MS')
+        df = df[['Price / kg']]
+        
+        # Scale data
+        scaled_train = scaler.transform(df.iloc[:-12])
+        
+        # Prepare for predictions
+        n_input = 345
+        n_features = 1
+        last_train_batch = scaled_train[-n_input:]
+        current_batch = last_train_batch.reshape((1, n_input, n_features))
+
+        # Predict for multiple years
+        rice_predictions = []
+        for year in range(current_year, current_year + num_years):
+            yearly_predictions = []
+            for month in range(1, 13):
+                # Predict next month's price
+                current_pred = model.predict(current_batch)[0]
+                yearly_predictions.append(float(current_pred))
+                
+                # Update batch with the latest prediction
+                current_batch = np.append(current_batch[:, 1:, :], [[current_pred]], axis=1)
+            
+            # Inverse transform predictions to get actual prices
+            yearly_predictions = np.array(yearly_predictions).reshape(-1, 1)
+            actual_yearly_predictions = scaler.inverse_transform(yearly_predictions).flatten()
+            
+            # Append predictions to the output list
+            predicted_prices = [
+                {
+                    'month': calendar.month_name[month],
+                    'year': year,
+                    'price': round(float(price), 2)
+                }
+                for month, price in enumerate(actual_yearly_predictions, start=1)
+            ]
+            rice_predictions.extend(predicted_prices)
+
+        # Store predictions for the current rice type
+        all_predictions[rice_type] = rice_predictions
+    
+    # Export to JSON file
+    with open(json_path, 'w') as f:
+        json.dump(all_predictions, f, indent=4)
+
+    return all_predictions
+
+# Path to the JSON file
+JSON_FILE_PATH = os.path.join('static', 'predictions', 'rice_price_predictions.json')
+
+@app.route('/api/prices')
+def get_prices():
+    # Load the JSON data
+    with open(JSON_FILE_PATH, 'r') as file:
+        data = json.load(file)
+    return jsonify(data)
+
+# using function on load
+predict_all_rice_types(num_years=5)
 
 
 if __name__ == '__main__':

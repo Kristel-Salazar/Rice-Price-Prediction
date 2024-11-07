@@ -160,10 +160,10 @@ function initializeChart(riceTypes) {
           grid: { display: true },
         },
         y: {
-          title: { display: false },
+          title: { display: true, text: "Price" },
           display: true,
           grid: { display: true },
-          ticks: { display: false },
+          ticks: { display: true },
         },
       },
       plugins: {

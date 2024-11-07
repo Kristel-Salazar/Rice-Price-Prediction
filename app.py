@@ -14,7 +14,7 @@ import joblib
 import joblib
 from tensorflow.keras.models import load_model
 import json
-import datetime
+from datetime import datetime
 import os
 
 app = Flask(__name__)
@@ -31,130 +31,93 @@ def index():
     return render_template('index.html')
 
 
-# Pricing route
+# Pricing route with trigger for predict_all_rice_types if data is missing
 @app.route('/pricing', methods=['POST', 'GET'])
 def pricing():
     global progress
     if request.method == 'POST':
-        month = int(request.form.get('month'))
-        month_name = calendar.month_name[month]
-        type = request.form.get('type')
-        year = int(request.form.get('year'))
-
-        print(request.form)
-
+        # Initialize progress
         with progress_lock:
             progress = 10  # Start progress at 10%
 
-        # Load and preprocess data based on rice type
-        if type.lower() == "regular":
-            # Load the pre-trained scaler and model
-            scaler = joblib.load('static/models/regular_scaler.pkl')
-            # model = load_model('lstm_premium_rice_price_model.h5')
-            model = load_model('static/models/lstm_regular_rice_price_model.h5', compile=False)
+        # Retrieve request parameters
+        month = int(request.form.get('month'))
+        month_name = calendar.month_name[month]
+        rice_type = request.form.get('type').lower()
+        year = int(request.form.get('year'))
 
-            df = pd.read_csv('static/datasets/reduced_regular_milled_rice.csv')
-        elif type.lower() == "premium":
-            # Load the pre-trained scaler and model
-            scaler = joblib.load('static/models/premium_scaler.pkl')
-            # model = load_model('lstm_premium_rice_price_model.h5')
-            model = load_model('static/models/lstm_premium_rice_price_model.h5', compile=False)
+        # Update progress after reading input data
+        with progress_lock:
+            progress = 20
 
-            df = pd.read_csv('static/datasets/reduced_premium_rice.csv')
-        elif type.lower() == "special":
-            # Load the pre-trained scaler and model
-            scaler = joblib.load('static/models/special_scaler.pkl')
-            # model = load_model('lstm_premium_rice_price_model.h5')
-            model = load_model('static/models/lstm_special_rice_price_model.h5', compile=False)
+        # Path to JSON file
+        json_file_path = 'static/predictions/rice_price_predictions.json'
 
-            df = pd.read_csv('static/datasets/reduced_special_rice.csv')
-        elif type.lower() == "well milled":
-            # Load the pre-trained scaler and model
-            scaler = joblib.load('static/models/well_milled_scaler.pkl')
-            # model = load_model('lstm_premium_rice_price_model.h5')
-            model = load_model('static/models/lstm_well_milled_rice_price_model.h5', compile=False)
+        # Load data from JSON file
+        try:
+            with open(json_file_path, 'r') as f:
+                data = json.load(f)
+            with progress_lock:
+                progress = 50  # Progress after loading JSON
+        except FileNotFoundError:
+            with progress_lock:
+                progress = 100  # Complete progress on error
+            return jsonify(error="Prediction file not found."), 404
+        except json.JSONDecodeError:
+            with progress_lock:
+                progress = 100  # Complete progress on error
+            return jsonify(error="Error decoding the JSON file."), 500
 
-            df = pd.read_csv('static/datasets/reduced_well_milled_rice.csv')
+        # Get predictions for the specified rice type
+        predictions = data.get(rice_type, [])
+        with progress_lock:
+            progress = 70  # Progress after fetching type-specific data
 
-        # Ensure MONTH column is integer and create DATE column
-        df['MONTH'] = df['MONTH'].astype(int)
-        df["DATE"] = pd.to_datetime(df['YEAR'].astype(str) + '/' + df['MONTH'].astype(str) + '/01')
-        df = df.set_index('DATE').asfreq('MS')
+        # Find the matching month and year in the loaded data
+        predicted_price = None
+        for entry in predictions:
+            if entry['month'] == month_name and entry['year'] == year:
+                predicted_price = entry['price']
+                break
 
-        # Select column for price prediction
-        df = df[['Price / kg']]
+        # If no match is found, call predict_all_rice_types to update the JSON
+        if predicted_price is None:
+            with progress_lock:
+                progress = 80  # Indicate progress before updating JSON
+            
+            # Trigger the prediction update for missing data
+            data = predict_all_rice_types(year)
 
-        progress = 30
+            # Retry to fetch the predicted price after JSON update
+            predictions = data.get(rice_type, [])
+            for entry in predictions:
+                if entry['month'] == month_name and entry['year'] == year:
+                    predicted_price = entry['price']
+                    break
 
+            # If still no match is found, return an error
+            if predicted_price is None:
+                with progress_lock:
+                    progress = 100  # Complete progress on error
+                return jsonify(error=f"No prediction data available for {month_name} {year}."), 404
 
-        # Perform seasonal decomposition
-        # (If this is needed for analysis but not directly part of the LSTM input, it can stay as is)
-        # results = seasonal_decompose(df)  # Uncomment if you want to see seasonal decomposition
-
-        # Split data into train and test sets
-        train = df.iloc[:-12]
-        test = df.iloc[-12:]
-
-
-
-        # Scale data using the loaded scaler
-        scaled_train = scaler.transform(train)
-
-        progress = 60
-
-        # Define generator for LSTM
-        n_input = 345
-        n_features = 1
-        generator = TimeseriesGenerator(scaled_train, scaled_train, length=n_input, batch_size=1)
-
-        # Prepare for predictions
-        last_train_batch = scaled_train[-n_input:]
-        current_batch = last_train_batch.reshape((1, n_input, n_features))
-
-        # Generate predictions for test set
-        test_predictions = []
-        for i in range(len(test)):
-            current_pred = model.predict(current_batch)[0]
-            test_predictions.append(current_pred)
-            current_batch = np.append(current_batch[:, 1:, :], [[current_pred]], axis=1)
-
-        # Inverse transform predictions to original scale
-        true_predictions = scaler.inverse_transform(test_predictions).flatten()
-        test['Predictions'] = true_predictions
-
-        progress = 70
-
-        # Calculate evaluation metrics
-        rmse = sqrt(mean_squared_error(test['Price / kg'], test['Predictions']))
-        mse = mean_squared_error(test['Price / kg'], test['Predictions'])
-        mae = mean_absolute_error(test['Price / kg'], test['Predictions'])
-        print(f'RMSE: {rmse}, MSE: {mse}, MAE: {mae}')
-
-        # Predict future price for the selected month and year
-        future_dates = pd.date_range(start=f'{year}-{month}-01', periods=1, freq='MS')
-        future_predictions = []
-        for _ in range(len(future_dates)):
-            current_pred = model.predict(current_batch)[0]
-            future_predictions.append(current_pred)
-            current_batch = np.append(current_batch[:, 1:, :], [[current_pred]], axis=1)
-
-        progress = 80
-
-        # Inverse transform future predictions
-        actual_future_predictions = scaler.inverse_transform(future_predictions)
-        predicted_price = actual_future_predictions[0][0]
-        print(f"Predicted Price for {future_dates[0].strftime('%B %Y')}: {predicted_price}")
+        # Update progress before completing
+        with progress_lock:
+            progress = 90  # Almost complete
 
         # Final progress completion
         with progress_lock:
-            progress = 100
+            progress = 100  # Fully complete
 
-        # Return the data as JSON
-        predicted_price = round(actual_future_predictions[0][0], 2)  # Format to 2 decimal places
-        print(f'{month} - {type} - {year} {predicted_price}')
-        return jsonify(month=month_name, type=type, year=year, price=predicted_price)
+        print(f'Prediction: {month_name} - {rice_type} - {predicted_price}')
 
+        # Return the predicted price as JSON
+        return jsonify(month=month_name, type=rice_type, year=year, price=predicted_price)
+
+    # Render the template for GET requests
     return render_template('Pricing.html')
+
+
 
 
 # About route
@@ -175,24 +138,26 @@ def get_progress():
     return jsonify(progress=progress)
 
 
-def predict_all_rice_types(num_years):
-    current_year = datetime.datetime.now().year
+def predict_all_rice_types(end_year):
+    current_year = datetime.now().year
     json_path = 'static/predictions/rice_price_predictions.json'
     
-    # Check if JSON exists and if predictions are up-to-date
+    # Check if JSON file exists and load it
     if os.path.exists(json_path):
         with open(json_path, 'r') as f:
             existing_data = json.load(f)
-            # Get the latest year in the existing predictions
-            latest_year_in_data = min(
-                min(item['year'] for item in rice_data) 
-                for rice_data in existing_data.values()
-            )
             
-            # If latest year in data is current, no need to update predictions
-            if latest_year_in_data >= current_year:
-                print("Predictions are up-to-date.")
-                return existing_data
+        # Find the maximum year in the existing JSON file
+        max_year_in_json = max(
+            item['year'] for rice_type in existing_data.values() for item in rice_type
+        )
+        
+        # Only proceed if end_year is greater than max_year_in_json
+        if end_year <= max_year_in_json:
+            print(f"No update needed; JSON already contains data up to {max_year_in_json}.")
+            return existing_data  # Return existing data if it's already up-to-date
+    
+    num_years = end_year - current_year + 1
     
     # Prediction models and paths setup
     rice_types = {
@@ -241,9 +206,9 @@ def predict_all_rice_types(num_years):
         last_train_batch = scaled_train[-n_input:]
         current_batch = last_train_batch.reshape((1, n_input, n_features))
 
-        # Predict for multiple years
+        # Predict for the range from current year to end year
         rice_predictions = []
-        for year in range(current_year, current_year + num_years):
+        for year in range(current_year, end_year + 1):
             yearly_predictions = []
             for month in range(1, 13):
                 # Predict next month's price
@@ -275,6 +240,7 @@ def predict_all_rice_types(num_years):
     with open(json_path, 'w') as f:
         json.dump(all_predictions, f, indent=4)
 
+    print("Predictions have been saved to", json_path)
     return all_predictions
 
 # Path to the JSON file
@@ -287,8 +253,16 @@ def get_prices():
         data = json.load(file)
     return jsonify(data)
 
-# using function on load
-predict_all_rice_types(num_years=5)
+
+@app.route('/predict', methods=['POST'])
+def predict():
+    data = request.get_json()
+    end_year = data.get('end_year', datetime.now().year)
+
+    # Call the predict_all_rice_types function with end_year as an argument
+    predictions = predict_all_rice_types(end_year)
+
+    return jsonify(predictions), 200
 
 
 if __name__ == '__main__':

@@ -213,31 +213,54 @@ h2 {
   text-align: center;
 }
 
+/* Main container styles */
+.retail-price-container .container {
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center contents horizontally */
+}
+
 /* Dropdown container styles */
 .retail-price-container .container .dropdown-container {
-  width: 100%; /* Ensures the container takes full width */
-  text-align: right; /* Aligns the dropdown to the right */
+  display: flex;
+  flex-direction: row;
+  align-items: center; /* Vertically aligns text and input */
+  justify-content: flex-end; /* Aligns text and input to the right within the dropdown */
+  max-width: fit-content;
   padding-bottom: 4%;
+  align-self: flex-end; /* Positions dropdown container to the right */
 }
 
 /* Dropdown menu */
-.dropdown-container select {
-  padding: 5px 40px;
+.dropdown-container input {
+  padding: 8px 12px;
   background-color: #fff;
-  border-color: #969696;
   font-size: 18px;
   font-weight: bold;
+  width: auto;
+  margin-left: 8px;
+  border: 1px solid #696969;
 }
-.start-year {
-  margin-right: 20px;
+.dropdown-container input:focus {
+  outline: none;
 }
 
 /* Label container */
 .label-container {
   display: flex;
-  justify-content: center;
+  justify-content: center; /* Centers labels horizontally */
   gap: 40px; /* Space between labels */
-  margin-bottom: 20px; /* Space below the label container */
+  margin-bottom: 20px;
+}
+
+.label-container .container1 {
+  text-align: center;
+}
+
+.label-container .container1 p {
+  margin-top: 5px;
+  font-size: 16px;
+  font-weight: bold;
 }
 
 .label-container .container1 {
@@ -582,7 +605,63 @@ input {
 .label-container .container1 p {
   font-size: 12px;
 }
+/* Chart Container */
+.chart-container {
+  position: relative;
+  width: 100%;
+  max-width: 800px; /* or your desired chart width */
+  margin: 0 auto; /* Center the chart */
+  height: 400px;
+}
 /* CHART ENDS */
+
+/* Loading Container Styles */
+#loading-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  visibility: hidden;
+}
+
+#loading-container .loading-message {
+  color: #fff;
+  font-size: 18px;
+  text-align: center;
+}
+
+#loading-container .spinner {
+  border: 8px solid rgba(255, 255, 255, 0.3);
+  border-top: 8px solid #ffffff;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin-top: 15px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Optional: Style adjustments for chart */
+#retail-price-chart {
+  width: 100%;
+  height: auto;
+}
+
+/* LOADING CHART CONTAINER ENDS */
 
 /* Progress bar style */
 /* Modal styling */
@@ -1105,6 +1184,15 @@ input {
     margin-top: 5px;
     font-size: 8px;
     font-weight: bold;
+  }
+
+  /* Chart Container */
+  .chart-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px; /* or your desired chart width */
+    margin: 0 auto; /* Center the chart */
+    height: 200px;
   }
   /* CHART ENDS */
 }

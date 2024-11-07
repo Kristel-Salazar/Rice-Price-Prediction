@@ -155,11 +155,13 @@
                 <div class="container">
                   <div class="dropdown-container">
                     Year:
-                    <select
-                      name="year-options"
-                      id="year-options"
-                      class="end-year"
-                    ></select>
+                    <input
+                      type="number"
+                      name="year"
+                      id="year-input"
+                      value="2024"
+                      onkeypress="triggerPrediction(event)"
+                    />
                   </div>
 
                   <div class="label-container">
@@ -189,9 +191,16 @@
                       <p>Well Milled</p>
                     </div>
                   </div>
-
-                  <div>
+                  <div class="chart-container">
                     <canvas id="retail-price-chart" class="chart"></canvas>
+                    <!-- Loading Container -->
+                    <div id="loading-container">
+                      <div class="loading-message">
+                        <p>Loading data, please wait...</p>
+                        <div class="spinner"></div>
+                      </div>
+                    </div>
+                    <!-- loading container ends -->
                   </div>
                 </div>
               </div>

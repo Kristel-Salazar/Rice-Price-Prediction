@@ -160,20 +160,50 @@ function initializeChart(riceTypes) {
           grid: { display: true },
         },
         y: {
-          title: { display: false }, // Hide the title for the y-axis
-          display: true, // Keep the y-axis displayed
-          grid: { display: true }, // Show the grid lines for the y-axis
-          ticks: { display: false }, // Hide the tick labels on the y-axis
+          title: { display: false },
+          display: true,
+          grid: { display: true },
+          ticks: { display: false },
         },
       },
       plugins: {
         legend: { display: false },
+        tooltip: {
+          callbacks: {
+            label: function (tooltipItem) {
+              const datasetIndex = tooltipItem.datasetIndex;
+              const dataIndex = tooltipItem.dataIndex;
+
+              // Get prices for this month across all rice types
+              const monthlyPrices = chart.data.datasets.map(
+                (dataset) => dataset.data[dataIndex]
+              );
+
+              // Sort prices and get the evaluation labels
+              const sortedPrices = [...monthlyPrices].sort((a, b) => b - a);
+              const evaluationLabels = [
+                "VERY GOOD",
+                "GOOD",
+                "AVERAGE",
+                "NOT GOOD",
+              ];
+
+              // Find the evaluation label based on the sorted prices
+              const price = monthlyPrices[datasetIndex];
+              const rank = sortedPrices.indexOf(price);
+              const evaluation = evaluationLabels[rank];
+
+              // Return only the evaluation label
+              return evaluation;
+            },
+          },
+        },
       },
     },
   });
 }
 
-// Update chart with selected year's data
+// Update chart with selected year's data and add evaluations
 function updateChart(chart, yearlyPrices) {
   const labels = yearlyPrices["regular"].map((item) => item.month);
   chart.data.labels = labels;

@@ -498,6 +498,11 @@ select {
   font-size: 12px;
 }
 
+.container-graph {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Add some styling */
+  border-radius: 8px; /* Optional: Add rounded corners */
+}
+
 .chart-container {
   width: 100%;
   max-width: 1200px; /* Set a max-width for the chart container */

@@ -152,7 +152,13 @@
               <div class="retail-price-container">
                 <h1>PRICING</h1>
                 <div class="headline-container">Retail Rice Price</div>
-                <div class="container">
+                <div
+                  class="container"
+                  style="
+                    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+                    border-radius: 8px;
+                  "
+                >
                   <div class="dropdown-container">
                     Year:
                     <input
@@ -266,23 +272,97 @@
                     </section>
                   </form>
                 </div>
-                <div class="chart-container-historical">
-                  <div class="year-filter-container">
-                    <label for="year-filter">Select Year:</label>
-                    <select id="year-filter">
-                      <option value="2015" selected>2015</option>
-                      <option value="2016">2016</option>
-                      <option value="2017">2017</option>
-                      <option value="2018">2018</option>
-                      <option value="2019">2019</option>
-                      <option value="2020">2020</option>
+                <div
+              class="container-graph"
+              style="
+                width: 100%;
+                max-height: fit-content;
+                background-color: #fff;
+                padding-top: 20px;
+                text-align: center;
+                margin-top: 40px;
+              "
+            >
+              <section class="dropdown-layout">
+                <div class="grow1">
+                  <div class="year-container">
+                    Start Year:
+                    <select name="year-options" id="startYear" class="year-options">
                     </select>
                   </div>
-                  <canvas
-                    id="historical-comparison-chart"
-                    class="comparison-chart"
-                  ></canvas>
                 </div>
+                <div class="grow1">
+                  <div class="year-container">
+                    End Year:
+                    <select name="year-options" id="endYear" class="year-options">
+                    </select>
+                  </div>
+                </div>
+              </section>
+              <div class="label-container">
+                <div class="container1">
+                  <i
+                    class="fi fi-ss-no-people"
+                    style="color: rgba(103, 182, 235, 1)"
+                  ></i>
+                  <p>Original Regular Rice</p>
+                </div>
+                <div class="container1">
+                  <i
+                    class="fi fi-ss-no-people"
+                    style="color: rgba(255, 112, 142, 1)"
+                  ></i>
+                  <p>Original Premium</p>
+                </div>
+                <div class="container1">
+                  <i class="fi fi-ss-no-people" style="color: rgba(227, 240, 161,1)"></i>
+                  <p>Original Special</p>
+                </div>
+                <div class="container1">
+                  <i
+                    class="fi fi-ss-no-people"
+                    style="color: rgba(195, 166, 255, 1)"
+                  ></i>
+                  <p>Original Well Milled</p>
+                </div>
+              </div>
+              <div class="label-container">
+                <div class="container1">
+                  <i
+                    class="fi fi-ss-no-people"
+                    style="color: rgba(54, 162, 235, 1)"
+                  ></i>
+                  <p>Regular Rice</p>
+                </div>
+                <div class="container1">
+                  <i
+                    class="fi fi-ss-no-people"
+                    style="color: rgba(255, 99, 132, 1)"
+                  ></i>
+                  <p>Premium</p>
+                </div>
+                <div class="container1">
+                  <i class="fi fi-ss-no-people" style="color: rgba(220, 241, 111, 1)"></i>
+                  <p>Special</p>
+                </div>
+                <div class="container1">
+                  <i
+                    class="fi fi-ss-no-people"
+                    style="color: rgba(153, 102, 255, 1)"
+                  ></i>
+                  <p>Well Milled</p>
+                </div>
+              </div>
+              <div class="chart-container">
+                <div class="chart-small">
+                  <canvas id="line-chart1"></canvas>
+                </div>
+                <div class="chart-large">
+                  <div class="box">
+                    <canvas id="line-chart2"></canvas>
+                  </div>
+                </div>
+            </div>
               </div>
             </section>
           </div>

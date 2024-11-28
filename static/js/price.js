@@ -290,168 +290,214 @@ function hideLoading() {
 // Run setup on load
 setup();
 
-// comparison chart
-let chart2; // Reference to the Chart.js instance
-
-// Define rice type colors
-const riceColors = {
-  regular: "rgba(54, 162, 235, 1)", // Regular
-  premium: "rgba(255, 99, 132, 1)", // Premium
-  special: "#dcf16f", // Special
-  well_milled: "rgba(153, 102, 255, 1)", // Well Milled
-  "original-regular": "rgba(54, 162, 235, 0.5)", // Original Regular
-  "original-premium": "rgba(255, 99, 132, 0.5)", // Original Premium
-  "original-special": "rgba(220, 241, 111, 0.5)", // Original Special
-  "original-well_milled": "rgba(153, 102, 255, 0.5)", // Original Well Milled
+// COMPARISON CHART
+// COMPARISON CHART
+let myChart1, myChart2;
+const uniqueYearsChart2 = new Set();
+const riceDataChart2 = {
+  premium: [],
+  regular: [],
+  special: [],
+  "well milled": [], // Updated key to match JSON header
+  "original-premium": [],
+  "original-regular": [],
+  "original-special": [],
+  "original-well milled": [],
 };
 
-// Function to fetch and plot the historical data
-async function fetchAndPlotHistoricalData(selectedYear = "2015") {
+// Fetch data for chart2 and chart3 from local JSON
+async function getJSONDataForChart2AndChart3(url) {
   try {
-    // Fetch the JSON data from Flask's static directory
-    const response = await fetch(
-      "/static/predictions/rice_price_predictions.json"
-    );
-    if (!response.ok) throw new Error("Failed to fetch data");
-    const data = await response.json();
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error("Network response was not ok");
+    }
+    const jsonData = await response.json();
 
-    // Define rice types and months
-    const riceTypes = [
-      "regular",
-      "premium",
-      "special",
-      "well milled",
-      "original-regular",
-      "original-premium",
-      "original-special",
-      "original-well milled",
-    ];
-    const months = [
-      "January",
-      "February",
-      "March",
-      "April",
-      "May",
-      "June",
-      "July",
-      "August",
-      "September",
-      "October",
-      "November",
-      "December",
-    ];
+    Object.keys(jsonData).forEach((type) => {
+      Object.keys(jsonData[type]).forEach((year) => {
+        jsonData[type][year].forEach((entry) => {
+          const { month, year, price } = entry;
 
-    // Create datasets and xLabels
-    const datasets = [];
-    const xLabels = [];
+          // Format year-month label
+          const monthIndex = new Date(`${month} 1, ${year}`).getMonth() + 1;
+          const label = `${year}-${monthIndex < 10 ? "0" : ""}${monthIndex}`;
 
-    // Loop through each rice type
-    riceTypes.forEach((riceType) => {
-      const riceData = data[riceType];
-      if (!riceData) {
-        console.warn(`No data available for rice type: ${riceType}`);
-        return;
-      }
-
-      // Aggregate data points for the selected year
-      const ricePrices = [];
-      Object.keys(riceData).forEach((year) => {
-        if (selectedYear !== "all" && year !== selectedYear) return; // Filter by selected year
-
-        riceData[year].forEach((entry) => {
-          ricePrices.push({
-            x: `${entry.month} ${entry.year}`, // Format: "Month Year"
-            y: entry.price,
-          });
-
-          // Add month to xLabels if not already present
-          const monthLabel = `${entry.month} ${entry.year}`;
-          if (!xLabels.includes(monthLabel)) xLabels.push(monthLabel);
+          if (riceDataChart2[type]) {
+            riceDataChart2[type].push({
+              year,
+              month: monthIndex,
+              price,
+              label,
+            });
+            uniqueYearsChart2.add(year);
+          }
         });
       });
-
-      // Add a dataset for the rice type with the specified color
-      datasets.push({
-        label:
-          riceType
-            .split("-")
-            .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-            .join(" ") + " Rice", // Capitalize and format label
-        data: ricePrices,
-        borderColor: riceColors[riceType], // Set the color based on rice type
-        fill: false, // No fill under the line
-        tension: 0, // Set tension to 0 for straight lines
-      });
     });
 
-    // Sort xLabels (months within the year)
-    xLabels.sort(
-      (a, b) =>
-        new Date(a.split(" ")[1], months.indexOf(a.split(" ")[0])) -
-        new Date(b.split(" ")[1], months.indexOf(b.split(" ")[0]))
-    );
-
-    // Destroy the old chart if it exists
-    if (chart2) chart2.destroy();
-
-    // Create the line chart
-    const ctx = document
-      .getElementById("historical-comparison-chart")
-      .getContext("2d");
-    chart2 = new Chart(ctx, {
-      type: "line", // Line chart type
-      data: {
-        labels: xLabels, // X-axis labels (filtered months)
-        datasets: datasets,
-      },
-      options: {
-        responsive: true,
-        plugins: {
-          title: {
-            display: true,
-            text:
-              selectedYear === "all"
-                ? "Rice Price Trends by Type (2015-2020)"
-                : `Rice Price Trends by Type (${selectedYear})`,
-          },
-          legend: {
-            position: "top",
-            labels: {
-              usePointStyle: true,
-            },
-          },
-        },
-        scales: {
-          x: {
-            type: "category", // X-axis uses months as categories
-            title: {
-              display: true,
-              text: "Month", // Month on X-axis
-            },
-          },
-          y: {
-            beginAtZero: false, // Y-axis doesn't start from zero
-            title: {
-              display: true,
-              text: "Price", // Y-axis label (Price)
-            },
-          },
-        },
-      },
-    });
+    console.log("Parsed data for Chart 2 & 3:", riceDataChart2);
   } catch (error) {
-    console.error("Error fetching or plotting data:", error);
+    console.error("Error fetching JSON data:", error);
   }
 }
 
-// Initialize the chart when the page loads
-document.addEventListener("DOMContentLoaded", () => {
-  fetchAndPlotHistoricalData("2015"); // Fetch and display data for 2015 by default
+async function setupChart2AndChart3() {
+  await getJSONDataForChart2AndChart3(
+    "/static/predictions/rice_price_predictions.json"
+  );
 
-  // Add event listener to the year filter dropdown
-  const yearFilter = document.getElementById("year-filter");
-  yearFilter.addEventListener("change", (event) => {
-    const selectedYear = event.target.value;
-    fetchAndPlotHistoricalData(selectedYear); // Update the chart with the selected year
+  populateYearDropdownsChart2();
+  updateChart2AndChart3();
+}
+
+// Populate year dropdowns for chart2 and chart3
+function populateYearDropdownsChart2() {
+  const startYearSelect = document.getElementById("startYear");
+  const endYearSelect = document.getElementById("endYear");
+
+  // Filter years to limit the range to 2015–2020
+  const yearsArray = Array.from(uniqueYearsChart2)
+    .sort()
+    .filter((year) => year >= 2015 && year <= 2020);
+
+  yearsArray.forEach((year) => {
+    const option = document.createElement("option");
+    option.value = year;
+    option.textContent = year;
+    startYearSelect.appendChild(option.cloneNode(true)); // Add to start year dropdown
+    endYearSelect.appendChild(option); // Add to end year dropdown
   });
-});
+
+  // Set the latest year as the default value for the end year dropdown
+  endYearSelect.value = yearsArray[yearsArray.length - 1];
+}
+
+// Update chart2 and chart3
+function updateChart2AndChart3() {
+  let startYear = parseInt(document.getElementById("startYear").value);
+  let endYear = parseInt(document.getElementById("endYear").value);
+
+  // Ensure the selected years are within the valid range
+  if (startYear < 2015) startYear = 2015;
+  if (endYear > 2020) endYear = 2020;
+
+  const filteredData2 = {
+    labels: [],
+    datasets: [],
+  };
+
+  const filteredData3 = {
+    labels: [],
+    datasets: [],
+  };
+
+  const datasetColors2 = {
+    premium: {
+      backgroundColor: "rgba(255, 99, 132, 0)",
+      borderColor: "rgba(255, 99, 132, 1)",
+      borderWidth: 2,
+    },
+    regular: {
+      backgroundColor: "rgba(54, 162, 235, 0)",
+      borderColor: "rgba(54, 162, 235, 1)",
+      borderWidth: 2,
+    },
+    special: {
+      backgroundColor: "rgba(220, 241, 111, 0)", // Updated color
+      borderColor: "rgba(220, 241, 111, 1)", // Updated color
+      borderWidth: 2,
+    },
+    "well milled": {
+      backgroundColor: "rgba(153, 102, 255, 0)",
+      borderColor: "rgba(153, 102, 255, 1)",
+      borderWidth: 2,
+    },
+    "original-premium": {
+      backgroundColor: "rgba(255, 112, 142, 0)", // Updated color
+      borderColor: "rgba(255, 112, 142, 1)", // Updated color
+      borderWidth: 2,
+    },
+    "original-regular": {
+      backgroundColor: "rgba(103, 182, 235, 0)", // Updated color
+      borderColor: "rgba(103, 182, 235, 1)", // Updated color
+      borderWidth: 2,
+    },
+    "original-special": {
+      backgroundColor: "rgba(227, 240, 161, 0)", // Updated color
+      borderColor: "rgba(227, 240, 161, 1)", // Updated color
+      borderWidth: 2,
+    },
+    "original-well milled": {
+      backgroundColor: "rgba(195, 166, 255, 0)", // Updated color
+      borderColor: "rgba(195, 166, 255, 1)", // Updated color
+      borderWidth: 2,
+    },
+  };
+
+  Object.keys(riceDataChart2).forEach((type) => {
+    const filteredPrices = riceDataChart2[type].filter((item) => {
+      const year = parseInt(item.year);
+      return year >= startYear && year <= endYear;
+    });
+
+    if (filteredPrices.length > 0) {
+      filteredData2.labels = filteredPrices.map((item) => item.label);
+      filteredData2.datasets.push({
+        label: `${type.charAt(0).toUpperCase() + type.slice(1)} Rice Prices`,
+        data: filteredPrices.map((item) => item.price),
+        ...datasetColors2[type],
+      });
+    }
+  });
+
+  if (myChart2) {
+    myChart2.destroy();
+  }
+
+  const config2 = {
+    type: "line",
+    data: filteredData2,
+    options: {
+      layout: {
+        padding: {
+          bottom: 59,
+        },
+      },
+      maintainAspectRatio: false,
+      scales: {
+        x: {
+          title: {
+            display: false,
+            text: "Year-Month",
+          },
+        },
+        y: {
+          beginAtZero: false,
+          title: {
+            display: true,
+            text: "Price",
+          },
+        },
+      },
+      plugins: {
+        legend: {
+          display: false, // Disable legend
+        },
+      },
+    },
+  };
+
+  myChart2 = new Chart(document.getElementById("line-chart2"), config2);
+}
+
+// Initialize charts
+setupChart2AndChart3();
+
+// Add event listeners
+document
+  .getElementById("startYear")
+  .addEventListener("change", updateChart2AndChart3);
+document
+  .getElementById("endYear")
+  .addEventListener("change", updateChart2AndChart3);

@@ -1237,82 +1237,182 @@ input {
     height: 200px;
   }
   /* CHART ENDS */
+}
 
-  /* CHART 2015-2020 */
-  .retail-price-prediction {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Center horizontally */
-    justify-content: center; /* Center vertically */
+/* CHART 2015-2020 */
+.dropdown-layout {
+  display: flex; /* Enables flexbox for horizontal layout */
+  justify-content: center; /* Centers the dropdowns horizontally */
+  gap: 20px; /* Adds space between the dropdowns */
+  margin-top: 20px; /* Optional: Adjust spacing above the dropdowns */
+}
+
+.grow1 {
+  display: flex;
+  flex-direction: column; /* Keeps the label and dropdown aligned vertically */
+  align-items: center; /* Center-aligns the contents */
+}
+
+.year-options {
+  padding: 8px 40px;
+  background-color: #fff;
+  border-color: #969696;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.label-container {
+  display: flex;
+  align-items: center; /* Vertically center items */
+  justify-content: center; /* Horizontally center items */
+  text-align: center;
+  padding-top: 40px;
+  gap: 25px;
+}
+
+.label-container .container1 {
+  display: flex;
+  padding: 0px;
+  margin: 0px;
+  background-color: none;
+  gap: 2px;
+}
+
+.label-container .container1 p {
+  font-size: 12px;
+}
+
+.container-graph {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Add some styling */
+  border-radius: 8px; /* Optional: Add rounded corners */
+}
+
+.chart-container {
+  width: 100%; /* Ensure the container spans the full width of its parent */
+  max-width: 1200px; /* Set a maximum width for the chart container */
+  height: auto; /* Let the height adjust automatically based on content */
+  padding: 20px;
+  border: none;
+  background: none;
+  margin: 0 auto; /* Center the container horizontally */
+  display: flex;
+  justify-content: center; /* Center the content inside the container */
+  align-items: center; /* Vertically center the content */
+  overflow-x: auto; /* Allow horizontal scrolling */
+  overflow-y: hidden; /* Prevent vertical scrolling */
+}
+
+canvas {
+  width: 100%; /* Allow the canvas to scale responsively */
+  height: auto; /* Adjust height automatically based on aspect ratio */
+}
+
+.chart-small {
+  width: 51px;
+}
+
+.chart-large {
+  width: 100%; /* Allow chart container to take full width */
+  overflow-x: auto; /* Enable horizontal scroll */
+  scroll-behavior: smooth;
+}
+
+.chart-large::-webkit-scrollbar {
+  width: 10px; /* Set scrollbar width */
+  height: 8px; /* Set scrollbar height */
+}
+
+.chart-large::-webkit-scrollbar-thumb {
+  background-color: #ccc; /* Set scrollbar thumb color */
+  border-radius: 10px; /* Optional: rounded corners */
+}
+
+.chart-large::-webkit-scrollbar-track {
+  background-color: #eee; /* Set scrollbar track color */
+}
+/* scrollbar customization ends */
+
+.box {
+  width: calc(500vh - 51px);
+  height: 500px;
+}
+
+.graph {
+  display: flex;
+  justify-content: center; /* Horizontally center the whole graph */
+  align-items: center;
+  flex-wrap: wrap; /* Allows content to wrap on smaller screens */
+  width: 100%;
+}
+
+/* CHART ENDS */
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .dropdown-layout {
+    flex-direction: column; /* Stack dropdowns vertically */
+    gap: 15px; /* Add less space between dropdowns */
   }
 
-  .chart-container-historical {
-    background-color: white;
-    margin-top: 40px;
-    width: 90%; /* Make width dynamic for smaller screens */
-    max-width: 600px; /* Limit maximum width for larger screens */
-    padding: 10px;
-    max-height: fit-content;
-    display: flex;
-    justify-content: center; /* Center content horizontally */
-    align-items: center; /* Center content vertically */
-    position: relative; /* Make the container relative for absolute positioning inside it */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Add some styling */
-    border-radius: 8px; /* Optional: Add rounded corners */
+  .year-options {
+    padding: 8px 20px; /* Adjust padding for smaller screens */
+    font-size: 16px; /* Make font size smaller */
   }
 
-  /* Positioning the year filter dropdown at the top-right */
-  .year-filter-container {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: #fff; /* Optional: to make sure the dropdown stands out */
-    padding: 5px; /* Optional: to provide some padding around the dropdown */
-    z-index: 10; /* Ensure the dropdown appears above the chart */
+  .label-container {
+    flex-direction: column; /* Stack labels and dropdowns vertically */
+    gap: 10px; /* Add space between labels */
   }
 
-  /* Style for the dropdown menu */
-  #year-filter {
-    font-size: 14px;
-    padding: 5px;
-    background-color: #f0f0f0;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+  .chart-container {
+    padding: 10px; /* Reduce padding */
+    max-width: 80%; /* Allow chart to take full width on smaller screens */
+    margin: 0 auto; /* Center the container horizontally */
+    padding-right: 40px;
   }
 
-  /* Responsive styles for mobile devices */
-  @media (max-width: 768px) {
-    .chart-container-historical {
-      width: 95%; /* Reduce width to fit mobile screen */
-      padding: 5px; /* Reduce padding */
-    }
-
-    .year-filter-container {
-      top: 5px; /* Adjust dropdown position for smaller screens */
-      right: 5px; /* Adjust dropdown position for smaller screens */
-    }
-
-    #year-filter {
-      font-size: 12px; /* Reduce font size for dropdown */
-      padding: 4px; /* Adjust padding for dropdown */
-    }
+  .chart-large {
+    width: 100%; /* Make chart container take full width */
+    overflow-x: auto; /* Allow horizontal scrolling */
   }
 
-  @media (max-width: 480px) {
-    .chart-container-historical {
-      width: 100%; /* Use full width for very small screens */
-      margin-top: 20px; /* Adjust top margin for smaller devices */
-    }
+  .box {
+    height: 300px; /* Adjust box height for mobile */
+  }
 
-    .year-filter-container {
-      top: 5px;
-      right: 5px;
-      padding: 3px; /* Reduce padding further */
-    }
+  .graph {
+    width: 100%; /* Make graph take full width */
+  }
 
-    #year-filter {
-      font-size: 12px;
-      padding: 3px;
-    }
+  canvas {
+    width: 100%; /* Ensure canvas scales correctly */
+  }
+}
+
+@media (max-width: 480px) {
+  .dropdown-layout {
+    gap: 10px; /* Further reduce space between dropdowns */
+  }
+
+  .year-options {
+    padding: 8px 15px; /* Smaller padding */
+    font-size: 14px; /* Smaller font size */
+  }
+
+  .label-container {
+    gap: 5px; /* Reduce gap between labels */
+  }
+
+  .chart-container {
+    padding: 5px; /* Further reduce padding */
+    max-width: 80%;
+  }
+
+  .chart-large {
+    width: 100%; /* Make chart container take full width */
+  }
+
+  .box {
+    height: 200px; /* Further reduce height for smaller screens */
   }
 }

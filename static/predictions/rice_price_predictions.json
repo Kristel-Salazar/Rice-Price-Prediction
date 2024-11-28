@@ -557,6 +557,68 @@
         "year": 2026,
         "price": 44.0
       }
+    ],
+    "2027": [
+      {
+        "month": "January",
+        "year": 2027,
+        "price": 44.16
+      },
+      {
+        "month": "February",
+        "year": 2027,
+        "price": 44.26
+      },
+      {
+        "month": "March",
+        "year": 2027,
+        "price": 44.31
+      },
+      {
+        "month": "April",
+        "year": 2027,
+        "price": 44.33
+      },
+      {
+        "month": "May",
+        "year": 2027,
+        "price": 44.31
+      },
+      {
+        "month": "June",
+        "year": 2027,
+        "price": 44.29
+      },
+      {
+        "month": "July",
+        "year": 2027,
+        "price": 44.25
+      },
+      {
+        "month": "August",
+        "year": 2027,
+        "price": 44.2
+      },
+      {
+        "month": "September",
+        "year": 2027,
+        "price": 44.15
+      },
+      {
+        "month": "October",
+        "year": 2027,
+        "price": 44.1
+      },
+      {
+        "month": "November",
+        "year": 2027,
+        "price": 44.05
+      },
+      {
+        "month": "December",
+        "year": 2027,
+        "price": 44.0
+      }
     ]
   },
   "premium": {
@@ -1115,6 +1177,68 @@
       {
         "month": "December",
         "year": 2026,
+        "price": 44.64
+      }
+    ],
+    "2027": [
+      {
+        "month": "January",
+        "year": 2027,
+        "price": 44.77
+      },
+      {
+        "month": "February",
+        "year": 2027,
+        "price": 44.99
+      },
+      {
+        "month": "March",
+        "year": 2027,
+        "price": 45.11
+      },
+      {
+        "month": "April",
+        "year": 2027,
+        "price": 45.16
+      },
+      {
+        "month": "May",
+        "year": 2027,
+        "price": 45.16
+      },
+      {
+        "month": "June",
+        "year": 2027,
+        "price": 45.13
+      },
+      {
+        "month": "July",
+        "year": 2027,
+        "price": 45.07
+      },
+      {
+        "month": "August",
+        "year": 2027,
+        "price": 44.99
+      },
+      {
+        "month": "September",
+        "year": 2027,
+        "price": 44.91
+      },
+      {
+        "month": "October",
+        "year": 2027,
+        "price": 44.82
+      },
+      {
+        "month": "November",
+        "year": 2027,
+        "price": 44.73
+      },
+      {
+        "month": "December",
+        "year": 2027,
         "price": 44.64
       }
     ]
@@ -1677,6 +1801,68 @@
         "year": 2026,
         "price": 51.76
       }
+    ],
+    "2027": [
+      {
+        "month": "January",
+        "year": 2027,
+        "price": 53.56
+      },
+      {
+        "month": "February",
+        "year": 2027,
+        "price": 53.46
+      },
+      {
+        "month": "March",
+        "year": 2027,
+        "price": 53.33
+      },
+      {
+        "month": "April",
+        "year": 2027,
+        "price": 53.17
+      },
+      {
+        "month": "May",
+        "year": 2027,
+        "price": 53.0
+      },
+      {
+        "month": "June",
+        "year": 2027,
+        "price": 52.83
+      },
+      {
+        "month": "July",
+        "year": 2027,
+        "price": 52.65
+      },
+      {
+        "month": "August",
+        "year": 2027,
+        "price": 52.47
+      },
+      {
+        "month": "September",
+        "year": 2027,
+        "price": 52.29
+      },
+      {
+        "month": "October",
+        "year": 2027,
+        "price": 52.11
+      },
+      {
+        "month": "November",
+        "year": 2027,
+        "price": 51.93
+      },
+      {
+        "month": "December",
+        "year": 2027,
+        "price": 51.76
+      }
     ]
   },
   "well milled": {
@@ -2235,6 +2421,68 @@
       {
         "month": "December",
         "year": 2026,
+        "price": 47.6
+      }
+    ],
+    "2027": [
+      {
+        "month": "January",
+        "year": 2027,
+        "price": 48.53
+      },
+      {
+        "month": "February",
+        "year": 2027,
+        "price": 48.46
+      },
+      {
+        "month": "March",
+        "year": 2027,
+        "price": 48.37
+      },
+      {
+        "month": "April",
+        "year": 2027,
+        "price": 48.28
+      },
+      {
+        "month": "May",
+        "year": 2027,
+        "price": 48.19
+      },
+      {
+        "month": "June",
+        "year": 2027,
+        "price": 48.09
+      },
+      {
+        "month": "July",
+        "year": 2027,
+        "price": 48.0
+      },
+      {
+        "month": "August",
+        "year": 2027,
+        "price": 47.91
+      },
+      {
+        "month": "September",
+        "year": 2027,
+        "price": 47.83
+      },
+      {
+        "month": "October",
+        "year": 2027,
+        "price": 47.75
+      },
+      {
+        "month": "November",
+        "year": 2027,
+        "price": 47.67
+      },
+      {
+        "month": "December",
+        "year": 2027,
         "price": 47.6
       }
     ]

@@ -331,6 +331,7 @@ setupChart();
 
 // Instantly assign Chart.js version
 const chartVersion = document.getElementById("chartVersion");
+// CHART ENDS
 
 async function updateRicePrices() {
   try {

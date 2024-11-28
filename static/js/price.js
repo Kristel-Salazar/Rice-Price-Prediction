@@ -289,3 +289,169 @@ function hideLoading() {
 
 // Run setup on load
 setup();
+
+// comparison chart
+let chart2; // Reference to the Chart.js instance
+
+// Define rice type colors
+const riceColors = {
+  regular: "rgba(54, 162, 235, 1)", // Regular
+  premium: "rgba(255, 99, 132, 1)", // Premium
+  special: "#dcf16f", // Special
+  well_milled: "rgba(153, 102, 255, 1)", // Well Milled
+  "original-regular": "rgba(54, 162, 235, 0.5)", // Original Regular
+  "original-premium": "rgba(255, 99, 132, 0.5)", // Original Premium
+  "original-special": "rgba(220, 241, 111, 0.5)", // Original Special
+  "original-well_milled": "rgba(153, 102, 255, 0.5)", // Original Well Milled
+};
+
+// Function to fetch and plot the historical data
+async function fetchAndPlotHistoricalData(selectedYear = "2015") {
+  try {
+    // Fetch the JSON data from Flask's static directory
+    const response = await fetch(
+      "/static/predictions/rice_price_predictions.json"
+    );
+    if (!response.ok) throw new Error("Failed to fetch data");
+    const data = await response.json();
+
+    // Define rice types and months
+    const riceTypes = [
+      "regular",
+      "premium",
+      "special",
+      "well milled",
+      "original-regular",
+      "original-premium",
+      "original-special",
+      "original-well milled",
+    ];
+    const months = [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December",
+    ];
+
+    // Create datasets and xLabels
+    const datasets = [];
+    const xLabels = [];
+
+    // Loop through each rice type
+    riceTypes.forEach((riceType) => {
+      const riceData = data[riceType];
+      if (!riceData) {
+        console.warn(`No data available for rice type: ${riceType}`);
+        return;
+      }
+
+      // Aggregate data points for the selected year
+      const ricePrices = [];
+      Object.keys(riceData).forEach((year) => {
+        if (selectedYear !== "all" && year !== selectedYear) return; // Filter by selected year
+
+        riceData[year].forEach((entry) => {
+          ricePrices.push({
+            x: `${entry.month} ${entry.year}`, // Format: "Month Year"
+            y: entry.price,
+          });
+
+          // Add month to xLabels if not already present
+          const monthLabel = `${entry.month} ${entry.year}`;
+          if (!xLabels.includes(monthLabel)) xLabels.push(monthLabel);
+        });
+      });
+
+      // Add a dataset for the rice type with the specified color
+      datasets.push({
+        label:
+          riceType
+            .split("-")
+            .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+            .join(" ") + " Rice", // Capitalize and format label
+        data: ricePrices,
+        borderColor: riceColors[riceType], // Set the color based on rice type
+        fill: false, // No fill under the line
+        tension: 0, // Set tension to 0 for straight lines
+      });
+    });
+
+    // Sort xLabels (months within the year)
+    xLabels.sort(
+      (a, b) =>
+        new Date(a.split(" ")[1], months.indexOf(a.split(" ")[0])) -
+        new Date(b.split(" ")[1], months.indexOf(b.split(" ")[0]))
+    );
+
+    // Destroy the old chart if it exists
+    if (chart2) chart2.destroy();
+
+    // Create the line chart
+    const ctx = document
+      .getElementById("historical-comparison-chart")
+      .getContext("2d");
+    chart2 = new Chart(ctx, {
+      type: "line", // Line chart type
+      data: {
+        labels: xLabels, // X-axis labels (filtered months)
+        datasets: datasets,
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          title: {
+            display: true,
+            text:
+              selectedYear === "all"
+                ? "Rice Price Trends by Type (2015-2020)"
+                : `Rice Price Trends by Type (${selectedYear})`,
+          },
+          legend: {
+            position: "top",
+            labels: {
+              usePointStyle: true,
+            },
+          },
+        },
+        scales: {
+          x: {
+            type: "category", // X-axis uses months as categories
+            title: {
+              display: true,
+              text: "Month", // Month on X-axis
+            },
+          },
+          y: {
+            beginAtZero: false, // Y-axis doesn't start from zero
+            title: {
+              display: true,
+              text: "Price", // Y-axis label (Price)
+            },
+          },
+        },
+      },
+    });
+  } catch (error) {
+    console.error("Error fetching or plotting data:", error);
+  }
+}
+
+// Initialize the chart when the page loads
+document.addEventListener("DOMContentLoaded", () => {
+  fetchAndPlotHistoricalData("2015"); // Fetch and display data for 2015 by default
+
+  // Add event listener to the year filter dropdown
+  const yearFilter = document.getElementById("year-filter");
+  yearFilter.addEventListener("change", (event) => {
+    const selectedYear = event.target.value;
+    fetchAndPlotHistoricalData(selectedYear); // Update the chart with the selected year
+  });
+});

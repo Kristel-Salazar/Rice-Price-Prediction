@@ -616,22 +616,46 @@ input {
 }
 /* CHART ENDS */
 
-/* CHART 2015-2020 */
+/* CHART 2015-2020  */
 .retail-price-prediction {
   display: flex;
   flex-direction: column;
   align-items: center; /* Center horizontally */
   justify-content: center; /* Center vertically */
 }
+
 .chart-container-historical {
+  background-color: white;
   margin-top: 40px;
-  width: 400px; /* Example width */
-  height: 300px; /* Example height */
+  width: 800px; /* Example width */
+  padding: 10px;
+  height: 500px; /* Example height */
   display: flex;
   justify-content: center; /* Center content horizontally */
   align-items: center; /* Center content vertically */
+  position: relative; /* Make the container relative for absolute positioning inside it */
 }
-/* CHART 2015-2020 ENDS */
+
+/* Positioning the year filter dropdown at the top-right */
+.year-filter-container {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #fff; /* Optional: to make sure the dropdown stands out */
+  padding: 5px; /* Optional: to provide some padding around the dropdown */
+  z-index: 10; /* Ensure the dropdown appears above the chart */
+}
+
+/* Style for the dropdown menu */
+#year-filter {
+  font-size: 14px;
+  padding: 5px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* CHART 2015-2020 ENDS
 
 /* Loading Container Styles */
 #loading-container {
@@ -1213,4 +1237,82 @@ input {
     height: 200px;
   }
   /* CHART ENDS */
+
+  /* CHART 2015-2020 */
+  .retail-price-prediction {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center horizontally */
+    justify-content: center; /* Center vertically */
+  }
+
+  .chart-container-historical {
+    background-color: white;
+    margin-top: 40px;
+    width: 90%; /* Make width dynamic for smaller screens */
+    max-width: 600px; /* Limit maximum width for larger screens */
+    padding: 10px;
+    max-height: fit-content;
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    position: relative; /* Make the container relative for absolute positioning inside it */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Add some styling */
+    border-radius: 8px; /* Optional: Add rounded corners */
+  }
+
+  /* Positioning the year filter dropdown at the top-right */
+  .year-filter-container {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #fff; /* Optional: to make sure the dropdown stands out */
+    padding: 5px; /* Optional: to provide some padding around the dropdown */
+    z-index: 10; /* Ensure the dropdown appears above the chart */
+  }
+
+  /* Style for the dropdown menu */
+  #year-filter {
+    font-size: 14px;
+    padding: 5px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  /* Responsive styles for mobile devices */
+  @media (max-width: 768px) {
+    .chart-container-historical {
+      width: 95%; /* Reduce width to fit mobile screen */
+      padding: 5px; /* Reduce padding */
+    }
+
+    .year-filter-container {
+      top: 5px; /* Adjust dropdown position for smaller screens */
+      right: 5px; /* Adjust dropdown position for smaller screens */
+    }
+
+    #year-filter {
+      font-size: 12px; /* Reduce font size for dropdown */
+      padding: 4px; /* Adjust padding for dropdown */
+    }
+  }
+
+  @media (max-width: 480px) {
+    .chart-container-historical {
+      width: 100%; /* Use full width for very small screens */
+      margin-top: 20px; /* Adjust top margin for smaller devices */
+    }
+
+    .year-filter-container {
+      top: 5px;
+      right: 5px;
+      padding: 3px; /* Reduce padding further */
+    }
+
+    #year-filter {
+      font-size: 12px;
+      padding: 3px;
+    }
+  }
 }

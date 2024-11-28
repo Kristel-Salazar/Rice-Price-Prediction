@@ -111,18 +111,18 @@ async function fetchPredictions() {
   }
 }
 
-// Get prices for the selected year and rice type
 function getYearlyPrices(data, year) {
   const yearlyPrices = {};
   Object.keys(data).forEach((riceType) => {
-    const entries = data[riceType].filter(
-      (item) => item.year === parseInt(year)
-    );
-    if (entries.length > 0) {
-      yearlyPrices[riceType] = entries.map((item) => ({
+    if (data[riceType][year]) {
+      // Access the data for the given year
+      yearlyPrices[riceType] = data[riceType][year].map((item) => ({
         month: item.month,
         price: item.price,
       }));
+    } else {
+      // Handle missing years gracefully
+      yearlyPrices[riceType] = [];
     }
   });
   return yearlyPrices;

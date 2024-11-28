@@ -358,26 +358,40 @@ async function updateRicePrices() {
 
     for (const type in riceTypes) {
       const priceSectionId = riceTypes[type];
-      const prices = ricePrices[type]; // No change here
+      const yearlyPrices = ricePrices[type]; // Prices are now nested by year
+      console.log(`Prices for ${type}:`, yearlyPrices);
 
-      console.log(`Prices for ${type}:`, prices);
+      // Check if the specific year exists in the data
+      if (yearlyPrices && yearlyPrices[currentYear]) {
+        const prices = yearlyPrices[currentYear]; // Get the array of prices for the current year
 
-      // Check if prices is defined and is an array
-      if (Array.isArray(prices)) {
-        const priceData = prices.find(
-          (price) => price.month === currentMonth && price.year === currentYear
-        );
+        // Check if prices is defined and is an array
+        if (Array.isArray(prices)) {
+          const priceData = prices.find(
+            (price) =>
+              price.month === currentMonth && price.year === currentYear
+          );
 
-        if (priceData) {
-          const priceDisplay = document
-            .getElementById(priceSectionId)
-            .querySelector(".price-display");
-          priceDisplay.innerHTML = `<span class="peso-sign">&#8369;</span> ${priceData.price.toFixed(
-            2
-          )}/kg`;
+          if (priceData) {
+            const priceDisplay = document
+              .getElementById(priceSectionId)
+              .querySelector(".price-display");
+            priceDisplay.innerHTML = `<span class="peso-sign">&#8369;</span> ${priceData.price.toFixed(
+              2
+            )}/kg`;
+          } else {
+            console.warn(
+              `No price data found for ${type} in ${currentMonth} ${currentYear}`
+            );
+            const priceDisplay = document
+              .getElementById(priceSectionId)
+              .querySelector(".price-display");
+            priceDisplay.innerHTML = `<span class="peso-sign">&#8369;</span> Not available`;
+          }
         } else {
-          console.warn(
-            `No price data found for ${type} in ${currentMonth} ${currentYear}`
+          console.error(
+            `Expected prices to be an array for ${type}, but got:`,
+            prices
           );
           const priceDisplay = document
             .getElementById(priceSectionId)
@@ -385,10 +399,7 @@ async function updateRicePrices() {
           priceDisplay.innerHTML = `<span class="peso-sign">&#8369;</span> Not available`;
         }
       } else {
-        console.error(
-          `Expected prices to be an array for ${type}, but got:`,
-          prices
-        );
+        console.warn(`No price data found for ${type} in ${currentYear}`);
         const priceDisplay = document
           .getElementById(priceSectionId)
           .querySelector(".price-display");

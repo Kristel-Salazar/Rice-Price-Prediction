@@ -616,6 +616,23 @@ input {
 }
 /* CHART ENDS */
 
+/* CHART 2015-2020 */
+.retail-price-prediction {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center horizontally */
+  justify-content: center; /* Center vertically */
+}
+.chart-container-historical {
+  margin-top: 40px;
+  width: 400px; /* Example width */
+  height: 300px; /* Example height */
+  display: flex;
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+}
+/* CHART 2015-2020 ENDS */
+
 /* Loading Container Styles */
 #loading-container {
   position: absolute;

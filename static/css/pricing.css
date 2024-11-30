@@ -1239,7 +1239,19 @@ input {
   /* CHART ENDS */
 }
 
-/* CHART 2015-2020 */
+/* FORECASTING CHART*/
+.year-container {
+  display: flex; /* Arrange label and input side by side */
+  align-items: center; /* Vertically align label and input */
+  gap: 8px; /* Add space between label and input */
+}
+
+label {
+  font-size: 1rm;
+  font-family: Verdana;
+  font-weight: bold;
+}
+
 .dropdown-layout {
   display: flex; /* Enables flexbox for horizontal layout */
   justify-content: center; /* Centers the dropdowns horizontally */
@@ -1259,6 +1271,7 @@ input {
   border-color: #969696;
   font-size: 18px;
   font-weight: bold;
+  border: 1px solid #969696;
 }
 
 .label-container {
@@ -1416,3 +1429,4 @@ canvas {
     height: 200px; /* Further reduce height for smaller screens */
   }
 }
+/* FORECASTING CHART ENDS */

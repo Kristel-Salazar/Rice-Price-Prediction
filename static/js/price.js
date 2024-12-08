@@ -291,7 +291,6 @@ function hideLoading() {
 setup();
 
 // COMPARISON CHART
-// COMPARISON CHART
 let myChart1, myChart2;
 const uniqueYearsChart2 = new Set();
 const riceDataChart2 = {
@@ -352,25 +351,38 @@ async function setupChart2AndChart3() {
 }
 
 // Populate year dropdowns for chart2 and chart3
-function populateYearDropdownsChart2() {
-  const startYearSelect = document.getElementById("startYear");
-  const endYearSelect = document.getElementById("endYear");
+function populateYearInputsChart2() {
+  const startYearInput = document.getElementById("startYear");
+  const endYearInput = document.getElementById("endYear");
 
-  // Filter years to limit the range to 2015–2020
-  const yearsArray = Array.from(uniqueYearsChart2)
-    .sort()
-    .filter((year) => year >= 2015 && year <= 2020);
+  // Set default values for the year inputs
+  startYearInput.value = "2015";
+  endYearInput.value = "2020";
+}
 
-  yearsArray.forEach((year) => {
-    const option = document.createElement("option");
-    option.value = year;
-    option.textContent = year;
-    startYearSelect.appendChild(option.cloneNode(true)); // Add to start year dropdown
-    endYearSelect.appendChild(option); // Add to end year dropdown
+// Update chart2 and chart3 when "Enter" is pressed
+function addEnterKeyListenerToInputs() {
+  const startYearInput = document.getElementById("startYear");
+  const endYearInput = document.getElementById("endYear");
+
+  [startYearInput, endYearInput].forEach((input) => {
+    input.addEventListener("keypress", (event) => {
+      if (event.key === "Enter") {
+        updateChart2AndChart3();
+      }
+    });
   });
+}
 
-  // Set the latest year as the default value for the end year dropdown
-  endYearSelect.value = yearsArray[yearsArray.length - 1];
+// Initialize charts and add key listeners
+async function setupChart2AndChart3() {
+  await getJSONDataForChart2AndChart3(
+    "/static/predictions/rice_price_predictions.json"
+  );
+
+  populateYearInputsChart2();
+  addEnterKeyListenerToInputs();
+  updateChart2AndChart3();
 }
 
 // Update chart2 and chart3
@@ -404,8 +416,8 @@ function updateChart2AndChart3() {
       borderWidth: 2,
     },
     special: {
-      backgroundColor: "rgba(220, 241, 111, 0)", // Updated color
-      borderColor: "rgba(220, 241, 111, 1)", // Updated color
+      backgroundColor: "rgba(220, 241, 111, 0)",
+      borderColor: "rgba(220, 241, 111, 1)",
       borderWidth: 2,
     },
     "well milled": {
@@ -414,23 +426,23 @@ function updateChart2AndChart3() {
       borderWidth: 2,
     },
     "original-premium": {
-      backgroundColor: "rgba(255, 112, 142, 0)", // Updated color
-      borderColor: "rgba(255, 112, 142, 1)", // Updated color
+      backgroundColor: "rgba(255, 112, 142, 0)",
+      borderColor: "rgba(255, 112, 142, 1)",
       borderWidth: 2,
     },
     "original-regular": {
-      backgroundColor: "rgba(103, 182, 235, 0)", // Updated color
-      borderColor: "rgba(103, 182, 235, 1)", // Updated color
+      backgroundColor: "rgba(103, 182, 235, 0)",
+      borderColor: "rgba(103, 182, 235, 1)",
       borderWidth: 2,
     },
     "original-special": {
-      backgroundColor: "rgba(227, 240, 161, 0)", // Updated color
-      borderColor: "rgba(227, 240, 161, 1)", // Updated color
+      backgroundColor: "rgba(227, 240, 161, 0)",
+      borderColor: "rgba(227, 240, 161, 1)",
       borderWidth: 2,
     },
     "original-well milled": {
-      backgroundColor: "rgba(195, 166, 255, 0)", // Updated color
-      borderColor: "rgba(195, 166, 255, 1)", // Updated color
+      backgroundColor: "rgba(195, 166, 255, 0)",
+      borderColor: "rgba(195, 166, 255, 1)",
       borderWidth: 2,
     },
   };
@@ -482,7 +494,7 @@ function updateChart2AndChart3() {
       },
       plugins: {
         legend: {
-          display: false, // Disable legend
+          display: false,
         },
       },
     },

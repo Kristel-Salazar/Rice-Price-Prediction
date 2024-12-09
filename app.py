@@ -128,9 +128,9 @@ def get_progress():
     return jsonify(progress=progress)
 
 
-# Predicting rice prices from current year to end year
+# Predicting rice prices from 2015 to the supplied end year
 def predict_rice_prices_to_year(end_year):
-    current_year = datetime.now().year
+    start_year = 2015  # Fixed start year
     json_path = 'static/predictions/rice_price_predictions.json'
 
     # Check if JSON file exists and load it
@@ -138,11 +138,11 @@ def predict_rice_prices_to_year(end_year):
         with open(json_path, 'r') as f:
             try:
                 existing_data = json.load(f)
-                # Check if the range of years from current year to end year already exists
+                # Check if the range of years from 2015 to end year already exists
                 all_years_present = True
-                for year in range(current_year, end_year + 1):
+                for year in range(start_year, end_year + 1):
                     if not all(
-                        str(year) in existing_data.get(rice_type, {}) 
+                        str(year) in existing_data.get(rice_type, {})
                         for rice_type in ['regular', 'premium', 'special', 'well milled']
                     ):
                         all_years_present = False
@@ -210,11 +210,11 @@ def predict_rice_prices_to_year(end_year):
         last_train_batch = scaled_train[-n_input:]
         current_batch = last_train_batch.reshape((1, n_input, n_features))
 
-        # Predict from the current year to the end year
+        # Predict from 2015 to the end year
         if rice_type not in all_predictions:
             all_predictions[rice_type] = {}
 
-        for year in range(current_year, end_year + 1):
+        for year in range(start_year, end_year + 1):
             if str(year) in all_predictions[rice_type]:
                 continue  # Skip years already present
 
@@ -250,9 +250,8 @@ def predict_rice_prices_to_year(end_year):
     with open(json_path, 'w') as f:
         json.dump(all_predictions, f, indent=4)
 
-    print(f"Predictions from {current_year} to {end_year} have been saved to {json_path}")
+    print(f"Predictions from {start_year} to {end_year} have been saved to {json_path}")
     return all_predictions
-
 
 
 # Path to the JSON file

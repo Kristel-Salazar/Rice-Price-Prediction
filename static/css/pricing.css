@@ -1401,6 +1401,21 @@ canvas {
     width: 100%; /* Ensure canvas scales correctly */
   }
 }
+.year-container {
+  display: flex; /* Enables flexbox for horizontal alignment */
+  align-items: center; /* Aligns label and input vertically */
+  gap: 10px; /* Adds space between the label and the input field */
+}
+
+.year-options {
+  padding: 8px 20px; /* Adjusts padding for better input field spacing */
+  background-color: #fff;
+  border: 1px solid #969696;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 4px; /* Optional: Add rounded corners */
+  width: 40%;
+}
 
 @media (max-width: 480px) {
   .dropdown-layout {

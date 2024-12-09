@@ -4,434 +4,620 @@
             {
                 "month": "January",
                 "year": 2015,
-                "price": 41.41
+                "price": 33.24
             },
             {
                 "month": "February",
                 "year": 2015,
-                "price": 47.9
+                "price": 37.2
             },
             {
                 "month": "March",
                 "year": 2015,
-                "price": 44.08
+                "price": 70.53
             },
             {
                 "month": "April",
                 "year": 2015,
-                "price": 46.35
+                "price": 61.48
             },
             {
                 "month": "May",
                 "year": 2015,
-                "price": 34.43
+                "price": 53.51
             },
             {
                 "month": "June",
                 "year": 2015,
-                "price": 43.11
+                "price": 60.7
             },
             {
                 "month": "July",
                 "year": 2015,
-                "price": 36.49
+                "price": 53.7
             },
             {
                 "month": "August",
                 "year": 2015,
-                "price": 75.47
+                "price": 41.91
             },
             {
                 "month": "September",
                 "year": 2015,
-                "price": 68.52
+                "price": 53.32
             },
             {
                 "month": "October",
                 "year": 2015,
-                "price": 69.54
+                "price": 72.93
             },
             {
                 "month": "November",
                 "year": 2015,
-                "price": 68.37
+                "price": 43.35
             },
             {
                 "month": "December",
                 "year": 2015,
-                "price": 53.8
+                "price": 76.18
             }
         ],
         "2016": [
             {
                 "month": "January",
                 "year": 2016,
-                "price": 57.4
+                "price": 52.17
             },
             {
                 "month": "February",
                 "year": 2016,
-                "price": 79.99
+                "price": 65.21
             },
             {
                 "month": "March",
                 "year": 2016,
-                "price": 67.85
+                "price": 65.25
             },
             {
                 "month": "April",
                 "year": 2016,
-                "price": 67.84
+                "price": 39.47
             },
             {
                 "month": "May",
                 "year": 2016,
-                "price": 73.19
+                "price": 36.74
             },
             {
                 "month": "June",
                 "year": 2016,
-                "price": 64.87
+                "price": 57.73
             },
             {
                 "month": "July",
                 "year": 2016,
-                "price": 73.96
+                "price": 53.68
             },
             {
                 "month": "August",
                 "year": 2016,
-                "price": 49.55
+                "price": 36.28
             },
             {
                 "month": "September",
                 "year": 2016,
-                "price": 46.04
+                "price": 57.16
             },
             {
                 "month": "October",
                 "year": 2016,
-                "price": 45.39
+                "price": 72.4
             },
             {
                 "month": "November",
                 "year": 2016,
-                "price": 56.1
+                "price": 49.75
             },
             {
                 "month": "December",
                 "year": 2016,
-                "price": 73.73
+                "price": 48.52
             }
         ],
         "2017": [
             {
                 "month": "January",
                 "year": 2017,
-                "price": 59.01
+                "price": 32.71
             },
             {
                 "month": "February",
                 "year": 2017,
-                "price": 53.48
+                "price": 45.77
             },
             {
                 "month": "March",
                 "year": 2017,
-                "price": 46.6
+                "price": 46.51
             },
             {
                 "month": "April",
                 "year": 2017,
-                "price": 62.91
+                "price": 73.93
             },
             {
                 "month": "May",
                 "year": 2017,
-                "price": 66.61
+                "price": 50.74
             },
             {
                 "month": "June",
                 "year": 2017,
-                "price": 71.34
+                "price": 34.83
             },
             {
                 "month": "July",
                 "year": 2017,
-                "price": 76.39
+                "price": 63.81
             },
             {
                 "month": "August",
                 "year": 2017,
-                "price": 41.52
+                "price": 61.83
             },
             {
                 "month": "September",
                 "year": 2017,
-                "price": 49.95
+                "price": 52.71
             },
             {
                 "month": "October",
                 "year": 2017,
-                "price": 74.63
+                "price": 40.22
             },
             {
                 "month": "November",
                 "year": 2017,
-                "price": 78.37
+                "price": 58.25
             },
             {
                 "month": "December",
                 "year": 2017,
-                "price": 43.04
+                "price": 66.22
             }
         ],
         "2018": [
             {
                 "month": "January",
                 "year": 2018,
-                "price": 48.19
+                "price": 48.04
             },
             {
                 "month": "February",
                 "year": 2018,
-                "price": 63.63
+                "price": 72.35
             },
             {
                 "month": "March",
                 "year": 2018,
-                "price": 45.07
+                "price": 52.02
             },
             {
                 "month": "April",
                 "year": 2018,
-                "price": 44.49
+                "price": 56.4
             },
             {
                 "month": "May",
                 "year": 2018,
-                "price": 68.83
+                "price": 72.02
             },
             {
                 "month": "June",
                 "year": 2018,
-                "price": 60.25
+                "price": 49.38
             },
             {
                 "month": "July",
                 "year": 2018,
-                "price": 44.53
+                "price": 55.23
             },
             {
                 "month": "August",
                 "year": 2018,
-                "price": 42.57
+                "price": 49.06
             },
             {
                 "month": "September",
                 "year": 2018,
-                "price": 66.68
+                "price": 46.71
             },
             {
                 "month": "October",
                 "year": 2018,
-                "price": 61.27
+                "price": 30.05
             },
             {
                 "month": "November",
                 "year": 2018,
-                "price": 32.91
+                "price": 57.25
             },
             {
                 "month": "December",
                 "year": 2018,
-                "price": 68.86
+                "price": 63.08
             }
         ],
         "2019": [
             {
                 "month": "January",
                 "year": 2019,
-                "price": 33.2
+                "price": 52.33
             },
             {
                 "month": "February",
                 "year": 2019,
-                "price": 64.42
+                "price": 35.41
             },
             {
                 "month": "March",
                 "year": 2019,
-                "price": 72.64
+                "price": 78.9
             },
             {
                 "month": "April",
                 "year": 2019,
-                "price": 49.23
+                "price": 58.46
             },
             {
                 "month": "May",
                 "year": 2019,
-                "price": 70.41
+                "price": 48.93
             },
             {
                 "month": "June",
                 "year": 2019,
-                "price": 56.84
+                "price": 33.43
             },
             {
                 "month": "July",
                 "year": 2019,
-                "price": 34.31
+                "price": 69.15
             },
             {
                 "month": "August",
                 "year": 2019,
-                "price": 54.96
+                "price": 51.66
             },
             {
                 "month": "September",
                 "year": 2019,
-                "price": 33.91
+                "price": 72.85
             },
             {
                 "month": "October",
                 "year": 2019,
-                "price": 67.77
+                "price": 55.46
             },
             {
                 "month": "November",
                 "year": 2019,
-                "price": 43.69
+                "price": 58.25
             },
             {
                 "month": "December",
                 "year": 2019,
-                "price": 65.22
+                "price": 33.0
             }
         ],
         "2020": [
             {
                 "month": "January",
                 "year": 2020,
-                "price": 67.87
+                "price": 71.74
             },
             {
                 "month": "February",
                 "year": 2020,
-                "price": 36.2
+                "price": 68.38
             },
             {
                 "month": "March",
                 "year": 2020,
-                "price": 37.39
+                "price": 59.5
             },
             {
                 "month": "April",
                 "year": 2020,
-                "price": 78.67
+                "price": 61.26
             },
             {
                 "month": "May",
                 "year": 2020,
-                "price": 65.94
+                "price": 66.47
             },
             {
                 "month": "June",
                 "year": 2020,
-                "price": 75.49
+                "price": 37.71
             },
             {
                 "month": "July",
                 "year": 2020,
-                "price": 47.94
+                "price": 42.18
             },
             {
                 "month": "August",
                 "year": 2020,
-                "price": 37.83
+                "price": 73.76
             },
             {
                 "month": "September",
                 "year": 2020,
-                "price": 51.7
+                "price": 49.62
             },
             {
                 "month": "October",
                 "year": 2020,
-                "price": 43.21
+                "price": 63.36
             },
             {
                 "month": "November",
                 "year": 2020,
-                "price": 57.77
+                "price": 78.48
             },
             {
                 "month": "December",
                 "year": 2020,
-                "price": 52.6
+                "price": 72.96
+            }
+        ],
+        "2021": [
+            {
+                "month": "January",
+                "year": 2021,
+                "price": 44.16
+            },
+            {
+                "month": "February",
+                "year": 2021,
+                "price": 44.26
+            },
+            {
+                "month": "March",
+                "year": 2021,
+                "price": 44.31
+            },
+            {
+                "month": "April",
+                "year": 2021,
+                "price": 44.33
+            },
+            {
+                "month": "May",
+                "year": 2021,
+                "price": 44.31
+            },
+            {
+                "month": "June",
+                "year": 2021,
+                "price": 44.29
+            },
+            {
+                "month": "July",
+                "year": 2021,
+                "price": 44.25
+            },
+            {
+                "month": "August",
+                "year": 2021,
+                "price": 44.2
+            },
+            {
+                "month": "September",
+                "year": 2021,
+                "price": 44.15
+            },
+            {
+                "month": "October",
+                "year": 2021,
+                "price": 44.1
+            },
+            {
+                "month": "November",
+                "year": 2021,
+                "price": 44.05
+            },
+            {
+                "month": "December",
+                "year": 2021,
+                "price": 44.0
+            }
+        ],
+        "2022": [
+            {
+                "month": "January",
+                "year": 2022,
+                "price": 43.95
+            },
+            {
+                "month": "February",
+                "year": 2022,
+                "price": 43.91
+            },
+            {
+                "month": "March",
+                "year": 2022,
+                "price": 43.86
+            },
+            {
+                "month": "April",
+                "year": 2022,
+                "price": 43.82
+            },
+            {
+                "month": "May",
+                "year": 2022,
+                "price": 43.78
+            },
+            {
+                "month": "June",
+                "year": 2022,
+                "price": 43.73
+            },
+            {
+                "month": "July",
+                "year": 2022,
+                "price": 43.7
+            },
+            {
+                "month": "August",
+                "year": 2022,
+                "price": 43.66
+            },
+            {
+                "month": "September",
+                "year": 2022,
+                "price": 43.62
+            },
+            {
+                "month": "October",
+                "year": 2022,
+                "price": 43.59
+            },
+            {
+                "month": "November",
+                "year": 2022,
+                "price": 43.56
+            },
+            {
+                "month": "December",
+                "year": 2022,
+                "price": 43.53
+            }
+        ],
+        "2023": [
+            {
+                "month": "January",
+                "year": 2023,
+                "price": 43.5
+            },
+            {
+                "month": "February",
+                "year": 2023,
+                "price": 43.47
+            },
+            {
+                "month": "March",
+                "year": 2023,
+                "price": 43.44
+            },
+            {
+                "month": "April",
+                "year": 2023,
+                "price": 43.41
+            },
+            {
+                "month": "May",
+                "year": 2023,
+                "price": 43.39
+            },
+            {
+                "month": "June",
+                "year": 2023,
+                "price": 43.36
+            },
+            {
+                "month": "July",
+                "year": 2023,
+                "price": 43.34
+            },
+            {
+                "month": "August",
+                "year": 2023,
+                "price": 43.32
+            },
+            {
+                "month": "September",
+                "year": 2023,
+                "price": 43.3
+            },
+            {
+                "month": "October",
+                "year": 2023,
+                "price": 43.28
+            },
+            {
+                "month": "November",
+                "year": 2023,
+                "price": 43.26
+            },
+            {
+                "month": "December",
+                "year": 2023,
+                "price": 43.24
             }
         ],
         "2024": [
             {
                 "month": "January",
                 "year": 2024,
-                "price": 44.16
+                "price": 43.22
             },
             {
                 "month": "February",
                 "year": 2024,
-                "price": 44.26
+                "price": 43.21
             },
             {
                 "month": "March",
                 "year": 2024,
-                "price": 44.31
+                "price": 43.19
             },
             {
                 "month": "April",
                 "year": 2024,
-                "price": 44.33
+                "price": 43.18
             },
             {
                 "month": "May",
                 "year": 2024,
-                "price": 44.31
+                "price": 43.16
             },
             {
                 "month": "June",
                 "year": 2024,
-                "price": 44.29
+                "price": 43.15
             },
             {
                 "month": "July",
                 "year": 2024,
-                "price": 44.25
+                "price": 43.13
             },
             {
                 "month": "August",
                 "year": 2024,
-                "price": 44.2
+                "price": 43.12
             },
             {
                 "month": "September",
                 "year": 2024,
-                "price": 44.15
+                "price": 43.11
             },
             {
                 "month": "October",
                 "year": 2024,
-                "price": 44.1
+                "price": 43.1
             },
             {
                 "month": "November",
                 "year": 2024,
-                "price": 44.05
+                "price": 43.09
             },
             {
                 "month": "December",
                 "year": 2024,
-                "price": 44.0
+                "price": 43.08
             }
         ],
         "2025": [
@@ -493,68 +679,6 @@
             {
                 "month": "December",
                 "year": 2025,
-                "price": 44.0
-            }
-        ],
-        "2026": [
-            {
-                "month": "January",
-                "year": 2026,
-                "price": 44.16
-            },
-            {
-                "month": "February",
-                "year": 2026,
-                "price": 44.26
-            },
-            {
-                "month": "March",
-                "year": 2026,
-                "price": 44.31
-            },
-            {
-                "month": "April",
-                "year": 2026,
-                "price": 44.33
-            },
-            {
-                "month": "May",
-                "year": 2026,
-                "price": 44.31
-            },
-            {
-                "month": "June",
-                "year": 2026,
-                "price": 44.29
-            },
-            {
-                "month": "July",
-                "year": 2026,
-                "price": 44.25
-            },
-            {
-                "month": "August",
-                "year": 2026,
-                "price": 44.2
-            },
-            {
-                "month": "September",
-                "year": 2026,
-                "price": 44.15
-            },
-            {
-                "month": "October",
-                "year": 2026,
-                "price": 44.1
-            },
-            {
-                "month": "November",
-                "year": 2026,
-                "price": 44.05
-            },
-            {
-                "month": "December",
-                "year": 2026,
                 "price": 44.0
             }
         ]
@@ -564,434 +688,620 @@
             {
                 "month": "January",
                 "year": 2015,
-                "price": 53.36
+                "price": 31.34
             },
             {
                 "month": "February",
                 "year": 2015,
-                "price": 40.21
+                "price": 71.02
             },
             {
                 "month": "March",
                 "year": 2015,
-                "price": 40.38
+                "price": 69.75
             },
             {
                 "month": "April",
                 "year": 2015,
-                "price": 52.69
+                "price": 54.99
             },
             {
                 "month": "May",
                 "year": 2015,
-                "price": 69.98
+                "price": 54.69
             },
             {
                 "month": "June",
                 "year": 2015,
-                "price": 67.41
+                "price": 64.14
             },
             {
                 "month": "July",
                 "year": 2015,
-                "price": 71.99
+                "price": 59.33
             },
             {
                 "month": "August",
                 "year": 2015,
-                "price": 47.91
+                "price": 74.67
             },
             {
                 "month": "September",
                 "year": 2015,
-                "price": 63.5
+                "price": 70.14
             },
             {
                 "month": "October",
                 "year": 2015,
-                "price": 36.35
+                "price": 59.98
             },
             {
                 "month": "November",
                 "year": 2015,
-                "price": 40.79
+                "price": 37.79
             },
             {
                 "month": "December",
                 "year": 2015,
-                "price": 47.07
+                "price": 77.99
             }
         ],
         "2016": [
             {
                 "month": "January",
                 "year": 2016,
-                "price": 64.37
+                "price": 54.88
             },
             {
                 "month": "February",
                 "year": 2016,
-                "price": 62.24
+                "price": 51.49
             },
             {
                 "month": "March",
                 "year": 2016,
-                "price": 60.21
+                "price": 52.36
             },
             {
                 "month": "April",
                 "year": 2016,
-                "price": 72.77
+                "price": 73.73
             },
             {
                 "month": "May",
                 "year": 2016,
-                "price": 48.18
+                "price": 74.17
             },
             {
                 "month": "June",
                 "year": 2016,
-                "price": 52.4
+                "price": 64.86
             },
             {
                 "month": "July",
                 "year": 2016,
-                "price": 76.47
+                "price": 55.36
             },
             {
                 "month": "August",
                 "year": 2016,
-                "price": 52.38
+                "price": 78.5
             },
             {
                 "month": "September",
                 "year": 2016,
-                "price": 42.19
+                "price": 41.76
             },
             {
                 "month": "October",
                 "year": 2016,
-                "price": 69.67
+                "price": 63.85
             },
             {
                 "month": "November",
                 "year": 2016,
-                "price": 53.51
+                "price": 62.65
             },
             {
                 "month": "December",
                 "year": 2016,
-                "price": 69.11
+                "price": 36.27
             }
         ],
         "2017": [
             {
                 "month": "January",
                 "year": 2017,
-                "price": 70.87
+                "price": 73.87
             },
             {
                 "month": "February",
                 "year": 2017,
-                "price": 57.96
+                "price": 67.84
             },
             {
                 "month": "March",
                 "year": 2017,
-                "price": 76.46
+                "price": 61.51
             },
             {
                 "month": "April",
                 "year": 2017,
-                "price": 78.31
+                "price": 61.44
             },
             {
                 "month": "May",
                 "year": 2017,
-                "price": 33.53
+                "price": 58.5
             },
             {
                 "month": "June",
                 "year": 2017,
-                "price": 78.37
+                "price": 43.1
             },
             {
                 "month": "July",
                 "year": 2017,
-                "price": 73.72
+                "price": 79.48
             },
             {
                 "month": "August",
                 "year": 2017,
-                "price": 63.85
+                "price": 71.45
             },
             {
                 "month": "September",
                 "year": 2017,
-                "price": 68.79
+                "price": 72.61
             },
             {
                 "month": "October",
                 "year": 2017,
-                "price": 52.87
+                "price": 64.47
             },
             {
                 "month": "November",
                 "year": 2017,
-                "price": 37.88
+                "price": 52.36
             },
             {
                 "month": "December",
                 "year": 2017,
-                "price": 61.24
+                "price": 40.38
             }
         ],
         "2018": [
             {
                 "month": "January",
                 "year": 2018,
-                "price": 45.1
+                "price": 45.54
             },
             {
                 "month": "February",
                 "year": 2018,
-                "price": 37.22
+                "price": 32.8
             },
             {
                 "month": "March",
                 "year": 2018,
-                "price": 59.19
+                "price": 34.81
             },
             {
                 "month": "April",
                 "year": 2018,
-                "price": 41.54
+                "price": 69.12
             },
             {
                 "month": "May",
                 "year": 2018,
-                "price": 75.27
+                "price": 40.13
             },
             {
                 "month": "June",
                 "year": 2018,
-                "price": 66.99
+                "price": 30.43
             },
             {
                 "month": "July",
                 "year": 2018,
-                "price": 77.63
+                "price": 43.8
             },
             {
                 "month": "August",
                 "year": 2018,
-                "price": 61.58
+                "price": 68.4
             },
             {
                 "month": "September",
                 "year": 2018,
-                "price": 44.45
+                "price": 58.05
             },
             {
                 "month": "October",
                 "year": 2018,
-                "price": 79.37
+                "price": 53.57
             },
             {
                 "month": "November",
                 "year": 2018,
-                "price": 38.72
+                "price": 43.65
             },
             {
                 "month": "December",
                 "year": 2018,
-                "price": 70.07
+                "price": 66.09
             }
         ],
         "2019": [
             {
                 "month": "January",
                 "year": 2019,
-                "price": 54.23
+                "price": 41.78
             },
             {
                 "month": "February",
                 "year": 2019,
-                "price": 51.51
+                "price": 54.56
             },
             {
                 "month": "March",
                 "year": 2019,
-                "price": 61.52
+                "price": 44.45
             },
             {
                 "month": "April",
                 "year": 2019,
-                "price": 37.74
+                "price": 44.93
             },
             {
                 "month": "May",
                 "year": 2019,
-                "price": 43.62
+                "price": 79.53
             },
             {
                 "month": "June",
                 "year": 2019,
-                "price": 56.99
+                "price": 72.75
             },
             {
                 "month": "July",
                 "year": 2019,
-                "price": 41.76
+                "price": 62.88
             },
             {
                 "month": "August",
                 "year": 2019,
-                "price": 77.92
+                "price": 34.93
             },
             {
                 "month": "September",
                 "year": 2019,
-                "price": 33.13
+                "price": 58.64
             },
             {
                 "month": "October",
                 "year": 2019,
-                "price": 43.43
+                "price": 64.05
             },
             {
                 "month": "November",
                 "year": 2019,
-                "price": 44.57
+                "price": 62.56
             },
             {
                 "month": "December",
                 "year": 2019,
-                "price": 60.31
+                "price": 38.31
             }
         ],
         "2020": [
             {
                 "month": "January",
                 "year": 2020,
-                "price": 50.05
+                "price": 48.22
             },
             {
                 "month": "February",
                 "year": 2020,
-                "price": 75.59
+                "price": 30.31
             },
             {
                 "month": "March",
                 "year": 2020,
-                "price": 62.15
+                "price": 55.31
             },
             {
                 "month": "April",
                 "year": 2020,
-                "price": 32.26
+                "price": 74.68
             },
             {
                 "month": "May",
                 "year": 2020,
-                "price": 70.13
+                "price": 55.38
             },
             {
                 "month": "June",
                 "year": 2020,
-                "price": 59.69
+                "price": 39.86
             },
             {
                 "month": "July",
                 "year": 2020,
-                "price": 38.67
+                "price": 32.66
             },
             {
                 "month": "August",
                 "year": 2020,
-                "price": 70.82
+                "price": 60.36
             },
             {
                 "month": "September",
                 "year": 2020,
-                "price": 77.9
+                "price": 62.03
             },
             {
                 "month": "October",
                 "year": 2020,
-                "price": 48.87
+                "price": 38.49
             },
             {
                 "month": "November",
                 "year": 2020,
-                "price": 57.33
+                "price": 67.5
             },
             {
                 "month": "December",
                 "year": 2020,
-                "price": 75.15
+                "price": 31.98
+            }
+        ],
+        "2021": [
+            {
+                "month": "January",
+                "year": 2021,
+                "price": 44.77
+            },
+            {
+                "month": "February",
+                "year": 2021,
+                "price": 44.99
+            },
+            {
+                "month": "March",
+                "year": 2021,
+                "price": 45.11
+            },
+            {
+                "month": "April",
+                "year": 2021,
+                "price": 45.16
+            },
+            {
+                "month": "May",
+                "year": 2021,
+                "price": 45.16
+            },
+            {
+                "month": "June",
+                "year": 2021,
+                "price": 45.13
+            },
+            {
+                "month": "July",
+                "year": 2021,
+                "price": 45.07
+            },
+            {
+                "month": "August",
+                "year": 2021,
+                "price": 44.99
+            },
+            {
+                "month": "September",
+                "year": 2021,
+                "price": 44.91
+            },
+            {
+                "month": "October",
+                "year": 2021,
+                "price": 44.82
+            },
+            {
+                "month": "November",
+                "year": 2021,
+                "price": 44.73
+            },
+            {
+                "month": "December",
+                "year": 2021,
+                "price": 44.64
+            }
+        ],
+        "2022": [
+            {
+                "month": "January",
+                "year": 2022,
+                "price": 44.56
+            },
+            {
+                "month": "February",
+                "year": 2022,
+                "price": 44.48
+            },
+            {
+                "month": "March",
+                "year": 2022,
+                "price": 44.4
+            },
+            {
+                "month": "April",
+                "year": 2022,
+                "price": 44.33
+            },
+            {
+                "month": "May",
+                "year": 2022,
+                "price": 44.25
+            },
+            {
+                "month": "June",
+                "year": 2022,
+                "price": 44.19
+            },
+            {
+                "month": "July",
+                "year": 2022,
+                "price": 44.12
+            },
+            {
+                "month": "August",
+                "year": 2022,
+                "price": 44.06
+            },
+            {
+                "month": "September",
+                "year": 2022,
+                "price": 44.0
+            },
+            {
+                "month": "October",
+                "year": 2022,
+                "price": 43.95
+            },
+            {
+                "month": "November",
+                "year": 2022,
+                "price": 43.89
+            },
+            {
+                "month": "December",
+                "year": 2022,
+                "price": 43.84
+            }
+        ],
+        "2023": [
+            {
+                "month": "January",
+                "year": 2023,
+                "price": 43.79
+            },
+            {
+                "month": "February",
+                "year": 2023,
+                "price": 43.75
+            },
+            {
+                "month": "March",
+                "year": 2023,
+                "price": 43.7
+            },
+            {
+                "month": "April",
+                "year": 2023,
+                "price": 43.66
+            },
+            {
+                "month": "May",
+                "year": 2023,
+                "price": 43.62
+            },
+            {
+                "month": "June",
+                "year": 2023,
+                "price": 43.58
+            },
+            {
+                "month": "July",
+                "year": 2023,
+                "price": 43.55
+            },
+            {
+                "month": "August",
+                "year": 2023,
+                "price": 43.51
+            },
+            {
+                "month": "September",
+                "year": 2023,
+                "price": 43.48
+            },
+            {
+                "month": "October",
+                "year": 2023,
+                "price": 43.45
+            },
+            {
+                "month": "November",
+                "year": 2023,
+                "price": 43.42
+            },
+            {
+                "month": "December",
+                "year": 2023,
+                "price": 43.39
             }
         ],
         "2024": [
             {
                 "month": "January",
                 "year": 2024,
-                "price": 44.77
+                "price": 43.36
             },
             {
                 "month": "February",
                 "year": 2024,
-                "price": 44.99
+                "price": 43.33
             },
             {
                 "month": "March",
                 "year": 2024,
-                "price": 45.11
+                "price": 43.31
             },
             {
                 "month": "April",
                 "year": 2024,
-                "price": 45.16
+                "price": 43.29
             },
             {
                 "month": "May",
                 "year": 2024,
-                "price": 45.16
+                "price": 43.26
             },
             {
                 "month": "June",
                 "year": 2024,
-                "price": 45.13
+                "price": 43.24
             },
             {
                 "month": "July",
                 "year": 2024,
-                "price": 45.07
+                "price": 43.22
             },
             {
                 "month": "August",
                 "year": 2024,
-                "price": 44.99
+                "price": 43.2
             },
             {
                 "month": "September",
                 "year": 2024,
-                "price": 44.91
+                "price": 43.18
             },
             {
                 "month": "October",
                 "year": 2024,
-                "price": 44.82
+                "price": 43.16
             },
             {
                 "month": "November",
                 "year": 2024,
-                "price": 44.73
+                "price": 43.15
             },
             {
                 "month": "December",
                 "year": 2024,
-                "price": 44.64
+                "price": 43.13
             }
         ],
         "2025": [
@@ -1053,68 +1363,6 @@
             {
                 "month": "December",
                 "year": 2025,
-                "price": 44.64
-            }
-        ],
-        "2026": [
-            {
-                "month": "January",
-                "year": 2026,
-                "price": 44.77
-            },
-            {
-                "month": "February",
-                "year": 2026,
-                "price": 44.99
-            },
-            {
-                "month": "March",
-                "year": 2026,
-                "price": 45.11
-            },
-            {
-                "month": "April",
-                "year": 2026,
-                "price": 45.16
-            },
-            {
-                "month": "May",
-                "year": 2026,
-                "price": 45.16
-            },
-            {
-                "month": "June",
-                "year": 2026,
-                "price": 45.13
-            },
-            {
-                "month": "July",
-                "year": 2026,
-                "price": 45.07
-            },
-            {
-                "month": "August",
-                "year": 2026,
-                "price": 44.99
-            },
-            {
-                "month": "September",
-                "year": 2026,
-                "price": 44.91
-            },
-            {
-                "month": "October",
-                "year": 2026,
-                "price": 44.82
-            },
-            {
-                "month": "November",
-                "year": 2026,
-                "price": 44.73
-            },
-            {
-                "month": "December",
-                "year": 2026,
                 "price": 44.64
             }
         ]
@@ -1124,434 +1372,620 @@
             {
                 "month": "January",
                 "year": 2015,
-                "price": 40.19
+                "price": 52.11
             },
             {
                 "month": "February",
                 "year": 2015,
-                "price": 39.65
+                "price": 46.52
             },
             {
                 "month": "March",
                 "year": 2015,
-                "price": 39.32
+                "price": 36.46
             },
             {
                 "month": "April",
                 "year": 2015,
-                "price": 50.1
+                "price": 65.95
             },
             {
                 "month": "May",
                 "year": 2015,
-                "price": 37.89
+                "price": 58.84
             },
             {
                 "month": "June",
                 "year": 2015,
-                "price": 42.53
+                "price": 47.59
             },
             {
                 "month": "July",
                 "year": 2015,
-                "price": 48.23
+                "price": 57.54
             },
             {
                 "month": "August",
                 "year": 2015,
-                "price": 45.41
+                "price": 79.15
             },
             {
                 "month": "September",
                 "year": 2015,
-                "price": 52.57
+                "price": 40.35
             },
             {
                 "month": "October",
                 "year": 2015,
-                "price": 48.56
+                "price": 33.33
             },
             {
                 "month": "November",
                 "year": 2015,
-                "price": 41.03
+                "price": 38.55
             },
             {
                 "month": "December",
                 "year": 2015,
-                "price": 41.16
+                "price": 32.24
             }
         ],
         "2016": [
             {
                 "month": "January",
                 "year": 2016,
-                "price": 44.57
+                "price": 77.45
             },
             {
                 "month": "February",
                 "year": 2016,
-                "price": 53.38
+                "price": 78.97
             },
             {
                 "month": "March",
                 "year": 2016,
-                "price": 72.04
+                "price": 69.45
             },
             {
                 "month": "April",
                 "year": 2016,
-                "price": 47.9
+                "price": 44.03
             },
             {
                 "month": "May",
                 "year": 2016,
-                "price": 41.16
+                "price": 77.72
             },
             {
                 "month": "June",
                 "year": 2016,
-                "price": 42.91
+                "price": 41.13
             },
             {
                 "month": "July",
                 "year": 2016,
-                "price": 47.24
+                "price": 58.36
             },
             {
                 "month": "August",
                 "year": 2016,
-                "price": 66.38
+                "price": 67.27
             },
             {
                 "month": "September",
                 "year": 2016,
-                "price": 70.14
+                "price": 46.59
             },
             {
                 "month": "October",
                 "year": 2016,
-                "price": 45.09
+                "price": 34.27
             },
             {
                 "month": "November",
                 "year": 2016,
-                "price": 53.18
+                "price": 33.14
             },
             {
                 "month": "December",
                 "year": 2016,
-                "price": 39.92
+                "price": 74.14
             }
         ],
         "2017": [
             {
                 "month": "January",
                 "year": 2017,
-                "price": 74.81
+                "price": 40.59
             },
             {
                 "month": "February",
                 "year": 2017,
-                "price": 55.6
+                "price": 60.82
             },
             {
                 "month": "March",
                 "year": 2017,
-                "price": 48.32
+                "price": 76.98
             },
             {
                 "month": "April",
                 "year": 2017,
-                "price": 30.4
+                "price": 50.22
             },
             {
                 "month": "May",
                 "year": 2017,
-                "price": 69.28
+                "price": 59.6
             },
             {
                 "month": "June",
                 "year": 2017,
-                "price": 31.63
+                "price": 35.44
             },
             {
                 "month": "July",
                 "year": 2017,
-                "price": 70.72
+                "price": 65.1
             },
             {
                 "month": "August",
                 "year": 2017,
-                "price": 40.83
+                "price": 69.97
             },
             {
                 "month": "September",
                 "year": 2017,
-                "price": 49.33
+                "price": 74.65
             },
             {
                 "month": "October",
                 "year": 2017,
-                "price": 57.88
+                "price": 43.13
             },
             {
                 "month": "November",
                 "year": 2017,
-                "price": 42.05
+                "price": 63.13
             },
             {
                 "month": "December",
                 "year": 2017,
-                "price": 76.85
+                "price": 33.67
             }
         ],
         "2018": [
             {
                 "month": "January",
                 "year": 2018,
-                "price": 31.42
+                "price": 63.78
             },
             {
                 "month": "February",
                 "year": 2018,
-                "price": 31.61
+                "price": 52.48
             },
             {
                 "month": "March",
                 "year": 2018,
-                "price": 63.31
+                "price": 37.13
             },
             {
                 "month": "April",
                 "year": 2018,
-                "price": 69.35
+                "price": 52.13
             },
             {
                 "month": "May",
                 "year": 2018,
-                "price": 51.95
+                "price": 75.14
             },
             {
                 "month": "June",
                 "year": 2018,
-                "price": 63.31
+                "price": 56.14
             },
             {
                 "month": "July",
                 "year": 2018,
-                "price": 64.39
+                "price": 66.75
             },
             {
                 "month": "August",
                 "year": 2018,
-                "price": 76.6
+                "price": 42.29
             },
             {
                 "month": "September",
                 "year": 2018,
-                "price": 41.2
+                "price": 50.36
             },
             {
                 "month": "October",
                 "year": 2018,
-                "price": 72.2
+                "price": 37.6
             },
             {
                 "month": "November",
                 "year": 2018,
-                "price": 76.24
+                "price": 45.88
             },
             {
                 "month": "December",
                 "year": 2018,
-                "price": 48.78
+                "price": 71.21
             }
         ],
         "2019": [
             {
                 "month": "January",
                 "year": 2019,
-                "price": 37.4
+                "price": 52.49
             },
             {
                 "month": "February",
                 "year": 2019,
-                "price": 45.13
+                "price": 70.52
             },
             {
                 "month": "March",
                 "year": 2019,
-                "price": 50.53
+                "price": 52.54
             },
             {
                 "month": "April",
                 "year": 2019,
-                "price": 44.1
+                "price": 52.58
             },
             {
                 "month": "May",
                 "year": 2019,
-                "price": 50.76
+                "price": 66.02
             },
             {
                 "month": "June",
                 "year": 2019,
-                "price": 61.0
+                "price": 40.8
             },
             {
                 "month": "July",
                 "year": 2019,
-                "price": 76.44
+                "price": 36.14
             },
             {
                 "month": "August",
                 "year": 2019,
-                "price": 71.02
+                "price": 35.84
             },
             {
                 "month": "September",
                 "year": 2019,
-                "price": 77.43
+                "price": 34.18
             },
             {
                 "month": "October",
                 "year": 2019,
-                "price": 39.96
+                "price": 53.53
             },
             {
                 "month": "November",
                 "year": 2019,
-                "price": 44.37
+                "price": 49.32
             },
             {
                 "month": "December",
                 "year": 2019,
-                "price": 30.04
+                "price": 76.04
             }
         ],
         "2020": [
             {
                 "month": "January",
                 "year": 2020,
-                "price": 69.11
+                "price": 51.78
             },
             {
                 "month": "February",
                 "year": 2020,
-                "price": 62.64
+                "price": 79.49
             },
             {
                 "month": "March",
                 "year": 2020,
-                "price": 59.02
+                "price": 71.94
             },
             {
                 "month": "April",
                 "year": 2020,
-                "price": 52.71
+                "price": 67.91
             },
             {
                 "month": "May",
                 "year": 2020,
-                "price": 66.4
+                "price": 59.41
             },
             {
                 "month": "June",
                 "year": 2020,
-                "price": 36.58
+                "price": 73.86
             },
             {
                 "month": "July",
                 "year": 2020,
-                "price": 44.4
+                "price": 38.05
             },
             {
                 "month": "August",
                 "year": 2020,
-                "price": 43.69
+                "price": 55.25
             },
             {
                 "month": "September",
                 "year": 2020,
-                "price": 63.0
+                "price": 72.21
             },
             {
                 "month": "October",
                 "year": 2020,
-                "price": 52.5
+                "price": 33.83
             },
             {
                 "month": "November",
                 "year": 2020,
-                "price": 37.11
+                "price": 65.87
             },
             {
                 "month": "December",
                 "year": 2020,
-                "price": 33.75
+                "price": 46.52
+            }
+        ],
+        "2021": [
+            {
+                "month": "January",
+                "year": 2021,
+                "price": 53.56
+            },
+            {
+                "month": "February",
+                "year": 2021,
+                "price": 53.46
+            },
+            {
+                "month": "March",
+                "year": 2021,
+                "price": 53.33
+            },
+            {
+                "month": "April",
+                "year": 2021,
+                "price": 53.17
+            },
+            {
+                "month": "May",
+                "year": 2021,
+                "price": 53.0
+            },
+            {
+                "month": "June",
+                "year": 2021,
+                "price": 52.83
+            },
+            {
+                "month": "July",
+                "year": 2021,
+                "price": 52.65
+            },
+            {
+                "month": "August",
+                "year": 2021,
+                "price": 52.47
+            },
+            {
+                "month": "September",
+                "year": 2021,
+                "price": 52.29
+            },
+            {
+                "month": "October",
+                "year": 2021,
+                "price": 52.11
+            },
+            {
+                "month": "November",
+                "year": 2021,
+                "price": 51.93
+            },
+            {
+                "month": "December",
+                "year": 2021,
+                "price": 51.76
+            }
+        ],
+        "2022": [
+            {
+                "month": "January",
+                "year": 2022,
+                "price": 51.59
+            },
+            {
+                "month": "February",
+                "year": 2022,
+                "price": 51.42
+            },
+            {
+                "month": "March",
+                "year": 2022,
+                "price": 51.25
+            },
+            {
+                "month": "April",
+                "year": 2022,
+                "price": 51.09
+            },
+            {
+                "month": "May",
+                "year": 2022,
+                "price": 50.94
+            },
+            {
+                "month": "June",
+                "year": 2022,
+                "price": 50.79
+            },
+            {
+                "month": "July",
+                "year": 2022,
+                "price": 50.64
+            },
+            {
+                "month": "August",
+                "year": 2022,
+                "price": 50.5
+            },
+            {
+                "month": "September",
+                "year": 2022,
+                "price": 50.35
+            },
+            {
+                "month": "October",
+                "year": 2022,
+                "price": 50.22
+            },
+            {
+                "month": "November",
+                "year": 2022,
+                "price": 50.09
+            },
+            {
+                "month": "December",
+                "year": 2022,
+                "price": 49.96
+            }
+        ],
+        "2023": [
+            {
+                "month": "January",
+                "year": 2023,
+                "price": 49.83
+            },
+            {
+                "month": "February",
+                "year": 2023,
+                "price": 49.71
+            },
+            {
+                "month": "March",
+                "year": 2023,
+                "price": 49.59
+            },
+            {
+                "month": "April",
+                "year": 2023,
+                "price": 49.47
+            },
+            {
+                "month": "May",
+                "year": 2023,
+                "price": 49.36
+            },
+            {
+                "month": "June",
+                "year": 2023,
+                "price": 49.25
+            },
+            {
+                "month": "July",
+                "year": 2023,
+                "price": 49.15
+            },
+            {
+                "month": "August",
+                "year": 2023,
+                "price": 49.04
+            },
+            {
+                "month": "September",
+                "year": 2023,
+                "price": 48.94
+            },
+            {
+                "month": "October",
+                "year": 2023,
+                "price": 48.85
+            },
+            {
+                "month": "November",
+                "year": 2023,
+                "price": 48.75
+            },
+            {
+                "month": "December",
+                "year": 2023,
+                "price": 48.66
             }
         ],
         "2024": [
             {
                 "month": "January",
                 "year": 2024,
-                "price": 53.56
+                "price": 48.57
             },
             {
                 "month": "February",
                 "year": 2024,
-                "price": 53.46
+                "price": 48.48
             },
             {
                 "month": "March",
                 "year": 2024,
-                "price": 53.33
+                "price": 48.4
             },
             {
                 "month": "April",
                 "year": 2024,
-                "price": 53.17
+                "price": 48.32
             },
             {
                 "month": "May",
                 "year": 2024,
-                "price": 53.0
+                "price": 48.24
             },
             {
                 "month": "June",
                 "year": 2024,
-                "price": 52.83
+                "price": 48.16
             },
             {
                 "month": "July",
                 "year": 2024,
-                "price": 52.65
+                "price": 48.09
             },
             {
                 "month": "August",
                 "year": 2024,
-                "price": 52.47
+                "price": 48.01
             },
             {
                 "month": "September",
                 "year": 2024,
-                "price": 52.29
+                "price": 47.94
             },
             {
                 "month": "October",
                 "year": 2024,
-                "price": 52.11
+                "price": 47.87
             },
             {
                 "month": "November",
                 "year": 2024,
-                "price": 51.93
+                "price": 47.81
             },
             {
                 "month": "December",
                 "year": 2024,
-                "price": 51.76
+                "price": 47.74
             }
         ],
         "2025": [
@@ -1613,68 +2047,6 @@
             {
                 "month": "December",
                 "year": 2025,
-                "price": 51.76
-            }
-        ],
-        "2026": [
-            {
-                "month": "January",
-                "year": 2026,
-                "price": 53.56
-            },
-            {
-                "month": "February",
-                "year": 2026,
-                "price": 53.46
-            },
-            {
-                "month": "March",
-                "year": 2026,
-                "price": 53.33
-            },
-            {
-                "month": "April",
-                "year": 2026,
-                "price": 53.17
-            },
-            {
-                "month": "May",
-                "year": 2026,
-                "price": 53.0
-            },
-            {
-                "month": "June",
-                "year": 2026,
-                "price": 52.83
-            },
-            {
-                "month": "July",
-                "year": 2026,
-                "price": 52.65
-            },
-            {
-                "month": "August",
-                "year": 2026,
-                "price": 52.47
-            },
-            {
-                "month": "September",
-                "year": 2026,
-                "price": 52.29
-            },
-            {
-                "month": "October",
-                "year": 2026,
-                "price": 52.11
-            },
-            {
-                "month": "November",
-                "year": 2026,
-                "price": 51.93
-            },
-            {
-                "month": "December",
-                "year": 2026,
                 "price": 51.76
             }
         ]
@@ -1684,434 +2056,620 @@
             {
                 "month": "January",
                 "year": 2015,
-                "price": 39.41
+                "price": 42.59
             },
             {
                 "month": "February",
                 "year": 2015,
-                "price": 49.65
+                "price": 32.15
             },
             {
                 "month": "March",
                 "year": 2015,
-                "price": 62.37
+                "price": 55.5
             },
             {
                 "month": "April",
                 "year": 2015,
-                "price": 51.43
+                "price": 33.44
             },
             {
                 "month": "May",
                 "year": 2015,
-                "price": 75.4
+                "price": 36.74
             },
             {
                 "month": "June",
                 "year": 2015,
-                "price": 39.75
+                "price": 55.25
             },
             {
                 "month": "July",
                 "year": 2015,
-                "price": 78.42
+                "price": 42.36
             },
             {
                 "month": "August",
                 "year": 2015,
-                "price": 77.16
+                "price": 58.25
             },
             {
                 "month": "September",
                 "year": 2015,
-                "price": 62.99
+                "price": 58.6
             },
             {
                 "month": "October",
                 "year": 2015,
-                "price": 45.08
+                "price": 50.26
             },
             {
                 "month": "November",
                 "year": 2015,
-                "price": 72.64
+                "price": 65.79
             },
             {
                 "month": "December",
                 "year": 2015,
-                "price": 76.47
+                "price": 30.28
             }
         ],
         "2016": [
             {
                 "month": "January",
                 "year": 2016,
-                "price": 55.3
+                "price": 45.55
             },
             {
                 "month": "February",
                 "year": 2016,
-                "price": 75.22
+                "price": 64.22
             },
             {
                 "month": "March",
                 "year": 2016,
-                "price": 66.0
+                "price": 58.44
             },
             {
                 "month": "April",
                 "year": 2016,
-                "price": 33.95
+                "price": 54.88
             },
             {
                 "month": "May",
                 "year": 2016,
-                "price": 68.4
+                "price": 56.05
             },
             {
                 "month": "June",
                 "year": 2016,
-                "price": 68.95
+                "price": 73.52
             },
             {
                 "month": "July",
                 "year": 2016,
-                "price": 74.04
+                "price": 32.9
             },
             {
                 "month": "August",
                 "year": 2016,
-                "price": 35.33
+                "price": 52.86
             },
             {
                 "month": "September",
                 "year": 2016,
-                "price": 79.12
+                "price": 41.57
             },
             {
                 "month": "October",
                 "year": 2016,
-                "price": 78.02
+                "price": 63.93
             },
             {
                 "month": "November",
                 "year": 2016,
-                "price": 35.0
+                "price": 56.7
             },
             {
                 "month": "December",
                 "year": 2016,
-                "price": 41.41
+                "price": 58.94
             }
         ],
         "2017": [
             {
                 "month": "January",
                 "year": 2017,
-                "price": 43.75
+                "price": 60.81
             },
             {
                 "month": "February",
                 "year": 2017,
-                "price": 41.84
+                "price": 36.29
             },
             {
                 "month": "March",
                 "year": 2017,
-                "price": 64.84
+                "price": 49.94
             },
             {
                 "month": "April",
                 "year": 2017,
-                "price": 49.25
+                "price": 40.44
             },
             {
                 "month": "May",
                 "year": 2017,
-                "price": 50.23
+                "price": 63.81
             },
             {
                 "month": "June",
                 "year": 2017,
-                "price": 46.93
+                "price": 67.54
             },
             {
                 "month": "July",
                 "year": 2017,
-                "price": 32.67
+                "price": 74.45
             },
             {
                 "month": "August",
                 "year": 2017,
-                "price": 78.65
+                "price": 32.93
             },
             {
                 "month": "September",
                 "year": 2017,
-                "price": 66.54
+                "price": 42.08
             },
             {
                 "month": "October",
                 "year": 2017,
-                "price": 47.73
+                "price": 65.17
             },
             {
                 "month": "November",
                 "year": 2017,
-                "price": 79.3
+                "price": 67.82
             },
             {
                 "month": "December",
                 "year": 2017,
-                "price": 71.15
+                "price": 72.03
             }
         ],
         "2018": [
             {
                 "month": "January",
                 "year": 2018,
-                "price": 72.12
+                "price": 32.34
             },
             {
                 "month": "February",
                 "year": 2018,
-                "price": 48.62
+                "price": 68.68
             },
             {
                 "month": "March",
                 "year": 2018,
-                "price": 61.77
+                "price": 43.2
             },
             {
                 "month": "April",
                 "year": 2018,
-                "price": 38.46
+                "price": 72.39
             },
             {
                 "month": "May",
                 "year": 2018,
-                "price": 66.79
+                "price": 78.05
             },
             {
                 "month": "June",
                 "year": 2018,
-                "price": 55.86
+                "price": 38.47
             },
             {
                 "month": "July",
                 "year": 2018,
-                "price": 30.95
+                "price": 50.76
             },
             {
                 "month": "August",
                 "year": 2018,
-                "price": 53.17
+                "price": 46.44
             },
             {
                 "month": "September",
                 "year": 2018,
-                "price": 37.02
+                "price": 35.7
             },
             {
                 "month": "October",
                 "year": 2018,
-                "price": 56.67
+                "price": 48.95
             },
             {
                 "month": "November",
                 "year": 2018,
-                "price": 53.2
+                "price": 52.93
             },
             {
                 "month": "December",
                 "year": 2018,
-                "price": 52.1
+                "price": 56.69
             }
         ],
         "2019": [
             {
                 "month": "January",
                 "year": 2019,
-                "price": 72.8
+                "price": 42.49
             },
             {
                 "month": "February",
                 "year": 2019,
-                "price": 43.74
+                "price": 30.46
             },
             {
                 "month": "March",
                 "year": 2019,
-                "price": 53.43
+                "price": 35.28
             },
             {
                 "month": "April",
                 "year": 2019,
-                "price": 55.67
+                "price": 45.06
             },
             {
                 "month": "May",
                 "year": 2019,
-                "price": 72.02
+                "price": 78.37
             },
             {
                 "month": "June",
                 "year": 2019,
-                "price": 73.99
+                "price": 70.58
             },
             {
                 "month": "July",
                 "year": 2019,
-                "price": 58.54
+                "price": 68.03
             },
             {
                 "month": "August",
                 "year": 2019,
-                "price": 43.26
+                "price": 65.61
             },
             {
                 "month": "September",
                 "year": 2019,
-                "price": 32.98
+                "price": 30.53
             },
             {
                 "month": "October",
                 "year": 2019,
-                "price": 69.59
+                "price": 49.0
             },
             {
                 "month": "November",
                 "year": 2019,
-                "price": 49.28
+                "price": 52.41
             },
             {
                 "month": "December",
                 "year": 2019,
-                "price": 31.78
+                "price": 72.81
             }
         ],
         "2020": [
             {
                 "month": "January",
                 "year": 2020,
-                "price": 63.75
+                "price": 56.06
             },
             {
                 "month": "February",
                 "year": 2020,
-                "price": 78.35
+                "price": 51.0
             },
             {
                 "month": "March",
                 "year": 2020,
-                "price": 76.43
+                "price": 50.0
             },
             {
                 "month": "April",
                 "year": 2020,
-                "price": 62.12
+                "price": 78.09
             },
             {
                 "month": "May",
                 "year": 2020,
-                "price": 35.51
+                "price": 68.56
             },
             {
                 "month": "June",
                 "year": 2020,
-                "price": 51.79
+                "price": 45.38
             },
             {
                 "month": "July",
                 "year": 2020,
-                "price": 76.81
+                "price": 41.88
             },
             {
                 "month": "August",
                 "year": 2020,
-                "price": 35.53
+                "price": 47.56
             },
             {
                 "month": "September",
                 "year": 2020,
-                "price": 51.73
+                "price": 67.92
             },
             {
                 "month": "October",
                 "year": 2020,
-                "price": 64.75
+                "price": 58.15
             },
             {
                 "month": "November",
                 "year": 2020,
-                "price": 70.0
+                "price": 75.14
             },
             {
                 "month": "December",
                 "year": 2020,
-                "price": 70.5
+                "price": 75.86
+            }
+        ],
+        "2021": [
+            {
+                "month": "January",
+                "year": 2021,
+                "price": 48.53
+            },
+            {
+                "month": "February",
+                "year": 2021,
+                "price": 48.46
+            },
+            {
+                "month": "March",
+                "year": 2021,
+                "price": 48.37
+            },
+            {
+                "month": "April",
+                "year": 2021,
+                "price": 48.28
+            },
+            {
+                "month": "May",
+                "year": 2021,
+                "price": 48.19
+            },
+            {
+                "month": "June",
+                "year": 2021,
+                "price": 48.09
+            },
+            {
+                "month": "July",
+                "year": 2021,
+                "price": 48.0
+            },
+            {
+                "month": "August",
+                "year": 2021,
+                "price": 47.91
+            },
+            {
+                "month": "September",
+                "year": 2021,
+                "price": 47.83
+            },
+            {
+                "month": "October",
+                "year": 2021,
+                "price": 47.75
+            },
+            {
+                "month": "November",
+                "year": 2021,
+                "price": 47.67
+            },
+            {
+                "month": "December",
+                "year": 2021,
+                "price": 47.6
+            }
+        ],
+        "2022": [
+            {
+                "month": "January",
+                "year": 2022,
+                "price": 47.53
+            },
+            {
+                "month": "February",
+                "year": 2022,
+                "price": 47.47
+            },
+            {
+                "month": "March",
+                "year": 2022,
+                "price": 47.41
+            },
+            {
+                "month": "April",
+                "year": 2022,
+                "price": 47.36
+            },
+            {
+                "month": "May",
+                "year": 2022,
+                "price": 47.31
+            },
+            {
+                "month": "June",
+                "year": 2022,
+                "price": 47.26
+            },
+            {
+                "month": "July",
+                "year": 2022,
+                "price": 47.22
+            },
+            {
+                "month": "August",
+                "year": 2022,
+                "price": 47.18
+            },
+            {
+                "month": "September",
+                "year": 2022,
+                "price": 47.14
+            },
+            {
+                "month": "October",
+                "year": 2022,
+                "price": 47.11
+            },
+            {
+                "month": "November",
+                "year": 2022,
+                "price": 47.08
+            },
+            {
+                "month": "December",
+                "year": 2022,
+                "price": 47.05
+            }
+        ],
+        "2023": [
+            {
+                "month": "January",
+                "year": 2023,
+                "price": 47.02
+            },
+            {
+                "month": "February",
+                "year": 2023,
+                "price": 46.99
+            },
+            {
+                "month": "March",
+                "year": 2023,
+                "price": 46.97
+            },
+            {
+                "month": "April",
+                "year": 2023,
+                "price": 46.95
+            },
+            {
+                "month": "May",
+                "year": 2023,
+                "price": 46.93
+            },
+            {
+                "month": "June",
+                "year": 2023,
+                "price": 46.91
+            },
+            {
+                "month": "July",
+                "year": 2023,
+                "price": 46.89
+            },
+            {
+                "month": "August",
+                "year": 2023,
+                "price": 46.87
+            },
+            {
+                "month": "September",
+                "year": 2023,
+                "price": 46.86
+            },
+            {
+                "month": "October",
+                "year": 2023,
+                "price": 46.84
+            },
+            {
+                "month": "November",
+                "year": 2023,
+                "price": 46.83
+            },
+            {
+                "month": "December",
+                "year": 2023,
+                "price": 46.82
             }
         ],
         "2024": [
             {
                 "month": "January",
                 "year": 2024,
-                "price": 48.53
+                "price": 46.81
             },
             {
                 "month": "February",
                 "year": 2024,
-                "price": 48.46
+                "price": 46.8
             },
             {
                 "month": "March",
                 "year": 2024,
-                "price": 48.37
+                "price": 46.79
             },
             {
                 "month": "April",
                 "year": 2024,
-                "price": 48.28
+                "price": 46.78
             },
             {
                 "month": "May",
                 "year": 2024,
-                "price": 48.19
+                "price": 46.77
             },
             {
                 "month": "June",
                 "year": 2024,
-                "price": 48.09
+                "price": 46.76
             },
             {
                 "month": "July",
                 "year": 2024,
-                "price": 48.0
+                "price": 46.76
             },
             {
                 "month": "August",
                 "year": 2024,
-                "price": 47.91
+                "price": 46.75
             },
             {
                 "month": "September",
                 "year": 2024,
-                "price": 47.83
+                "price": 46.74
             },
             {
                 "month": "October",
                 "year": 2024,
-                "price": 47.75
+                "price": 46.74
             },
             {
                 "month": "November",
                 "year": 2024,
-                "price": 47.67
+                "price": 46.73
             },
             {
                 "month": "December",
                 "year": 2024,
-                "price": 47.6
+                "price": 46.73
             }
         ],
         "2025": [
@@ -2173,68 +2731,6 @@
             {
                 "month": "December",
                 "year": 2025,
-                "price": 47.6
-            }
-        ],
-        "2026": [
-            {
-                "month": "January",
-                "year": 2026,
-                "price": 48.53
-            },
-            {
-                "month": "February",
-                "year": 2026,
-                "price": 48.46
-            },
-            {
-                "month": "March",
-                "year": 2026,
-                "price": 48.37
-            },
-            {
-                "month": "April",
-                "year": 2026,
-                "price": 48.28
-            },
-            {
-                "month": "May",
-                "year": 2026,
-                "price": 48.19
-            },
-            {
-                "month": "June",
-                "year": 2026,
-                "price": 48.09
-            },
-            {
-                "month": "July",
-                "year": 2026,
-                "price": 48.0
-            },
-            {
-                "month": "August",
-                "year": 2026,
-                "price": 47.91
-            },
-            {
-                "month": "September",
-                "year": 2026,
-                "price": 47.83
-            },
-            {
-                "month": "October",
-                "year": 2026,
-                "price": 47.75
-            },
-            {
-                "month": "November",
-                "year": 2026,
-                "price": 47.67
-            },
-            {
-                "month": "December",
-                "year": 2026,
                 "price": 47.6
             }
         ]

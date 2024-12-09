@@ -300,6 +300,9 @@ const riceDataChart2 = {
   "well milled": [],
 };
 
+// Global variable to store the maximum year in the data
+let maxYearInData = 2015; // Default minimum year
+
 // Fetch data for chart2 and chart3 from local JSON
 async function getJSONDataForChart2AndChart3(url) {
   try {
@@ -320,11 +323,15 @@ async function getJSONDataForChart2AndChart3(url) {
 
           const key = type === "wellMilled" ? "well milled" : type; // Map wellMilled to "well milled"
           riceDataChart2[key].push({ year, month: monthIndex, price, label });
-          uniqueYearsChart2.add(year);
+          uniqueYearsChart2.add(parseInt(year));
         });
       });
     });
 
+    // Determine the maximum year
+    maxYearInData = Math.max(...uniqueYearsChart2);
+
+    console.log("Max year in data:", maxYearInData);
     console.log("Parsed data for Chart 2 & 3:", riceDataChart2);
   } catch (error) {
     console.error("Error fetching JSON data:", error);
@@ -336,9 +343,8 @@ function populateYearDropdownsChart2() {
   const startYearSelect = document.getElementById("startYear");
   const endYearSelect = document.getElementById("endYear");
 
-  // Ensure the minimum year is 2024 and maximum is based on the JSON file
   const yearsArray = Array.from(uniqueYearsChart2)
-    .filter((year) => year >= 2024) // Exclude years below 2024
+    .filter((year) => year >= 2015 && year <= maxYearInData)
     .sort((a, b) => a - b);
 
   // Clear any existing options in the dropdowns
@@ -351,19 +357,23 @@ function populateYearDropdownsChart2() {
     option.textContent = year;
 
     // Append options to both dropdowns
-    startYearSelect.appendChild(option.cloneNode(true)); // Add to start year dropdown
-    endYearSelect.appendChild(option); // Add to end year dropdown
+    startYearSelect.appendChild(option.cloneNode(true));
+    endYearSelect.appendChild(option);
   });
 
-  // Set default values
-  startYearSelect.value = yearsArray[0] || 2024; // Default to the first year (or 2024 if empty)
-  endYearSelect.value = yearsArray[yearsArray.length - 1] || 2024; // Default to the last year (or 2024 if empty)
+  // Set default values to the full range
+  startYearSelect.value = "2015";
+  endYearSelect.value = maxYearInData.toString();
 }
 
 // Update chart2 and chart3
 function updateChart2AndChart3() {
-  const startYear = parseInt(document.getElementById("startYear").value);
-  const endYear = parseInt(document.getElementById("endYear").value);
+  let startYear = parseInt(document.getElementById("startYear").value);
+  let endYear = parseInt(document.getElementById("endYear").value);
+
+  // Ensure the selected years are within the valid range
+  if (startYear < 2015) startYear = 2015;
+  if (endYear > maxYearInData) endYear = maxYearInData;
 
   const filteredData2 = {
     labels: [],
@@ -372,45 +382,22 @@ function updateChart2AndChart3() {
 
   const datasetColors2 = {
     premium: {
-      backgroundColor: "rgba(255, 99, 132, 1)", // Changed color for premium
-      borderColor: "rgba(255, 99, 132, 1)",
-      borderWidth: 1,
-    },
-    regular: {
-      backgroundColor: "rgba(54, 162, 235, 1)", // Changed color for regular
-      borderColor: "rgba(54, 162, 235, 1)",
-      borderWidth: 1,
-    },
-    special: {
-      backgroundColor: "rgba(220, 241, 111, 1)", // Changed color for special
-      borderColor: "rgba(220, 241, 111, 1)",
-      borderWidth: 1,
-    },
-    "well milled": {
-      backgroundColor: "rgba(153, 102, 255, 1)", // Changed color for well milled
-      borderColor: "rgba(153, 102, 255, 1)",
-      borderWidth: 1,
-    },
-  };
-
-  const datasetColors3 = {
-    premium: {
-      backgroundColor: "rgba(255, 99, 132, 0.2)", // Changed color for premium
+      backgroundColor: "rgba(255, 99, 132, 0)",
       borderColor: "rgba(255, 99, 132, 1)",
       borderWidth: 2,
     },
     regular: {
-      backgroundColor: "rgba(54, 162, 235, 0.2)", // Changed color for regular
+      backgroundColor: "rgba(54, 162, 235, 0)",
       borderColor: "rgba(54, 162, 235, 1)",
       borderWidth: 2,
     },
     special: {
-      backgroundColor: "rgba(220, 241, 111, 0.2)", // Changed color for special
+      backgroundColor: "rgba(220, 241, 111, 0)",
       borderColor: "rgba(220, 241, 111, 1)",
       borderWidth: 2,
     },
     "well milled": {
-      backgroundColor: "rgba(153, 102, 255, 0.2)", // Changed color for well milled
+      backgroundColor: "rgba(153, 102, 255, 0)",
       borderColor: "rgba(153, 102, 255, 1)",
       borderWidth: 2,
     },
@@ -463,7 +450,7 @@ function updateChart2AndChart3() {
       },
       plugins: {
         legend: {
-          display: false, // This line removes the legend
+          display: false,
         },
       },
     },
